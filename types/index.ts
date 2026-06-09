@@ -1,0 +1,67 @@
+export type DayType = "hydric" | "food";
+
+export type PlanTier = "starter" | "essential" | "premium";
+
+export type WaterType = "water" | "tea" | "broth" | "juice" | "other";
+
+export interface Profile {
+  id: string;
+  prenom: string;
+  email: string;
+  plan: PlanTier;
+  stripe_status: string;
+  start_date: string;
+  weight_goal_kg?: number;
+  water_goal_ml: number;
+  notifications: boolean;
+}
+
+export interface WaterLog {
+  id: string;
+  user_id: string;
+  logged_at: string;
+  amount_ml: number;
+  type: WaterType;
+}
+
+export interface DayLog {
+  id: string;
+  user_id: string;
+  day_date: string;
+  day_type: DayType;
+  completed: boolean;
+  note?: string;
+}
+
+export interface WeightLog {
+  id: string;
+  user_id: string;
+  logged_at: string;
+  weight_kg: number;
+}
+
+export interface RecipeIngredient {
+  name: string;
+  qty: string;
+  unit: string;
+}
+
+export interface RecipeStep {
+  step: number;
+  text: string;
+}
+
+export interface Recipe {
+  id: string;
+  title: string;
+  description?: string;
+  day_type: DayType;
+  duration_min?: number;
+  tags?: string[];
+  ingredients?: RecipeIngredient[];
+  steps?: RecipeStep[];
+  image_url?: string;
+  plan_required: PlanTier;
+  published: boolean;
+  emoji?: string;
+}
