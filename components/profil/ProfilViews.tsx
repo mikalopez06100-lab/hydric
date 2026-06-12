@@ -86,6 +86,9 @@ interface ProfilHeaderProps {
   activeDays: number;
   weightLost: number;
   completionPct: number;
+  avatarUrl?: string;
+  currentWeightKg?: number | null;
+  targetWeightKg?: number | null;
 }
 
 export function ProfilHeader({
@@ -94,6 +97,9 @@ export function ProfilHeader({
   activeDays,
   weightLost,
   completionPct,
+  avatarUrl,
+  currentWeightKg,
+  targetWeightKg,
 }: ProfilHeaderProps) {
   const initial = prenom.charAt(0).toUpperCase();
 
@@ -107,8 +113,13 @@ export function ProfilHeader({
             "radial-gradient(ellipse at 50% 0%, rgba(244,241,234,0.12) 0%, transparent 60%)",
         }}
       />
-      <div className="relative mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full border border-bone/30 bg-bone/15 font-serif text-[26px] font-medium">
-        {initial}
+      <div className="relative mx-auto mb-3 flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border border-bone/30 bg-bone/15 font-serif text-[26px] font-medium">
+        {avatarUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={avatarUrl} alt="" className="h-full w-full object-cover" />
+        ) : (
+          initial
+        )}
       </div>
       <h1 className="relative font-serif text-xl font-normal">{prenom} M.</h1>
       <span
@@ -118,6 +129,17 @@ export function ProfilHeader({
         <span className="h-[5px] w-[5px] rounded-full bg-clay" />
         Plan {getPlanLabel(plan)}
       </span>
+      {(currentWeightKg != null || targetWeightKg != null) && (
+        <p className="relative mt-2 font-mono text-[10px] tracking-wide text-bone/60">
+          {currentWeightKg != null && (
+            <span>Actuel : {currentWeightKg} kg</span>
+          )}
+          {currentWeightKg != null && targetWeightKg != null && " · "}
+          {targetWeightKg != null && (
+            <span>Objectif : {targetWeightKg} kg</span>
+          )}
+        </p>
+      )}
       <div className="relative mt-4 flex items-center justify-center gap-4">
         {[
           { value: String(activeDays), label: "Jours" },

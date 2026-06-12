@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "HYDRIC",
   },
+  icons: {
+    apple: "/icons/icon-192.png",
+  },
 };
 
 export const viewport: Viewport = {

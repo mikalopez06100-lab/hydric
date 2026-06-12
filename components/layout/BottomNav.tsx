@@ -12,7 +12,7 @@ import {
 import { cn } from "@/lib/utils";
 
 const tabs = [
-  { href: "/", icon: Home, label: "Accueil" },
+  { href: "/dashboard", icon: Home, label: "Accueil" },
   { href: "/planning", icon: CalendarDays, label: "Plans" },
   { href: "/tracker", icon: Droplets, label: "Suivi" },
   { href: "/recettes", icon: UtensilsCrossed, label: "Recettes" },
@@ -26,8 +26,7 @@ export function BottomNav() {
     <nav className="fixed bottom-0 left-1/2 z-50 w-full max-w-phone -translate-x-1/2 border-t border-rule bg-paper safe-bottom">
       <div className="flex items-start justify-around px-2 pb-3.5 pt-2.5">
         {tabs.map(({ href, icon: Icon, label }) => {
-          const active =
-            href === "/" ? pathname === "/" : pathname.startsWith(href);
+          const active = pathname === href || pathname.startsWith(`${href}/`);
 
           return (
             <Link

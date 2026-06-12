@@ -1,0 +1,2524 @@
+[
+  {
+    "id": "h-001",
+    "title": "Bouillon détox aux légumes",
+    "description": "Léger et réconfortant pour vos jours hydriques",
+    "day_type": "hydric",
+    "meal_type": null,
+    "duration_min": 40,
+    "tags": [
+      "cure détox",
+      "léger",
+      "chaud"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 2,
+        "unit": "L",
+        "name": "eau"
+      },
+      {
+        "qty": 2,
+        "unit": "pièces",
+        "name": "carottes"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "branche de céleri"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "poireau"
+      },
+      {
+        "qty": 3,
+        "unit": "gousses",
+        "name": "ail"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "gingembre frais râpé"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "feuille de laurier"
+      },
+      {
+        "qty": 0,
+        "unit": "pincée",
+        "name": "sel, poivre"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Éplucher et couper grossièrement tous les légumes."
+      },
+      {
+        "step": 2,
+        "text": "Les placer dans une grande casserole avec l'eau froide."
+      },
+      {
+        "step": 3,
+        "text": "Porter à ébullition puis réduire à feu doux. Laisser mijoter 35 minutes."
+      },
+      {
+        "step": 4,
+        "text": "Filtrer le bouillon. Assaisonner et servir chaud dans un bol."
+      }
+    ]
+  },
+  {
+    "id": "h-002",
+    "title": "Tisane gingembre-citron-miel",
+    "description": "Boisson réchauffante et anti-inflammatoire pour les matins hydriques",
+    "day_type": "hydric",
+    "meal_type": null,
+    "duration_min": 5,
+    "tags": [
+      "tisane",
+      "matin",
+      "anti-inflammatoire"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 300,
+        "unit": "mL",
+        "name": "eau chaude (max 70°C)"
+      },
+      {
+        "qty": 3,
+        "unit": "tranches",
+        "name": "gingembre frais"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "citron (jus)"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "miel"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Faire infuser le gingembre dans l'eau chaude 5 minutes."
+      },
+      {
+        "step": 2,
+        "text": "Presser le citron et ajouter le jus."
+      },
+      {
+        "step": 3,
+        "text": "Incorporer le miel et mélanger. Servir immédiatement."
+      }
+    ]
+  },
+  {
+    "id": "h-003",
+    "title": "Eau détox concombre-menthe",
+    "description": "Eau aromatisée fraîche et légère à préparer la veille",
+    "day_type": "hydric",
+    "meal_type": null,
+    "duration_min": 5,
+    "tags": [
+      "froid",
+      "infusé",
+      "détox"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 1,
+        "unit": "L",
+        "name": "eau plate"
+      },
+      {
+        "qty": 0.5,
+        "unit": "pièce",
+        "name": "concombre en fines rondelles"
+      },
+      {
+        "qty": 10,
+        "unit": "feuilles",
+        "name": "menthe fraîche"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "citron vert en rondelles"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Placer toutes les tranches et les feuilles dans un pichet."
+      },
+      {
+        "step": 2,
+        "text": "Couvrir d'eau et laisser infuser au réfrigérateur minimum 2h (idéalement une nuit)."
+      },
+      {
+        "step": 3,
+        "text": "Servir frais tout au long de la journée."
+      }
+    ]
+  },
+  {
+    "id": "h-004",
+    "title": "Bouillon miso léger",
+    "description": "Bouillon japonais doux, riche en probiotiques naturels",
+    "day_type": "hydric",
+    "meal_type": null,
+    "duration_min": 10,
+    "tags": [
+      "chaud",
+      "probiotiques",
+      "umami"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 500,
+        "unit": "mL",
+        "name": "eau chaude (max 70°C)"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "pâte miso blanche"
+      },
+      {
+        "qty": 2,
+        "unit": "c. à soupe",
+        "name": "tofu soyeux en petits dés"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "algues wakamé séchées"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon vert émincé"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Diluer la pâte miso dans 2 c. à soupe d'eau tiède pour éviter les grumeaux."
+      },
+      {
+        "step": 2,
+        "text": "Réhydrater les algues 5 min dans un peu d'eau."
+      },
+      {
+        "step": 3,
+        "text": "Mélanger miso dilué, tofu, algues et eau chaude dans un bol. Parsemer d'oignon vert."
+      }
+    ]
+  },
+  {
+    "id": "h-005",
+    "title": "Jus vert pomme-épinard-gingembre",
+    "description": "Jus dilué vitaminé pour faire le plein d'énergie en douceur",
+    "day_type": "hydric",
+    "meal_type": null,
+    "duration_min": 10,
+    "tags": [
+      "jus dilué",
+      "vitamines",
+      "énergie"
+    ],
+    "plan_required": "essential",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 2,
+        "unit": "pièces",
+        "name": "pommes"
+      },
+      {
+        "qty": 1,
+        "unit": "poignée",
+        "name": "épinards frais"
+      },
+      {
+        "qty": 1,
+        "unit": "tranche",
+        "name": "gingembre frais"
+      },
+      {
+        "qty": 0.5,
+        "unit": "pièce",
+        "name": "citron (jus)"
+      },
+      {
+        "qty": 200,
+        "unit": "mL",
+        "name": "eau pour diluer"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Passer pommes, épinards et gingembre à l'extracteur ou au blender."
+      },
+      {
+        "step": 2,
+        "text": "Filtrer si besoin avec une passoire fine."
+      },
+      {
+        "step": 3,
+        "text": "Diluer avec l'eau et ajouter le jus de citron. Servir frais."
+      }
+    ]
+  },
+  {
+    "id": "h-006",
+    "title": "Soupe miso aux champignons",
+    "description": "Soupe légère et réconfortante pour les jours hydriques froids",
+    "day_type": "hydric",
+    "meal_type": null,
+    "duration_min": 15,
+    "tags": [
+      "chaud",
+      "minéral",
+      "champignons"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 600,
+        "unit": "mL",
+        "name": "eau"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "pâte miso rouge"
+      },
+      {
+        "qty": 4,
+        "unit": "pièces",
+        "name": "champignons shiitakés séchés"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "algues kombu séchées"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon vert"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Réhydrater les shiitakés et le kombu dans l'eau froide pendant 10 minutes."
+      },
+      {
+        "step": 2,
+        "text": "Porter à frémissement sans faire bouillir. Retirer le kombu."
+      },
+      {
+        "step": 3,
+        "text": "Hors du feu, diluer le miso dans le bouillon. Parsemer d'oignon vert émincé."
+      }
+    ]
+  },
+  {
+    "id": "h-007",
+    "title": "Eau aromatisée fraise-basilic",
+    "description": "Eau infusée estivale sans sucre ajouté, fraîche et élégante",
+    "day_type": "hydric",
+    "meal_type": null,
+    "duration_min": 5,
+    "tags": [
+      "froid",
+      "estival",
+      "sans sucre"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 1,
+        "unit": "L",
+        "name": "eau plate ou gazeuse"
+      },
+      {
+        "qty": 8,
+        "unit": "pièces",
+        "name": "fraises"
+      },
+      {
+        "qty": 5,
+        "unit": "feuilles",
+        "name": "basilic frais"
+      },
+      {
+        "qty": 0.5,
+        "unit": "pièce",
+        "name": "citron en rondelles"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Écraser légèrement les fraises à la fourchette pour libérer le jus."
+      },
+      {
+        "step": 2,
+        "text": "Placer fraises, basilic et citron dans un pichet. Couvrir d'eau."
+      },
+      {
+        "step": 3,
+        "text": "Infuser 1h minimum au frais avant de servir."
+      }
+    ]
+  },
+  {
+    "id": "h-008",
+    "title": "Bouillon de poulet maison",
+    "description": "Bouillon réconfortant, dégraissé, idéal pour nourrir sans alourdir",
+    "day_type": "hydric",
+    "meal_type": null,
+    "duration_min": 60,
+    "tags": [
+      "chaud",
+      "protéiné",
+      "réconfortant"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 2,
+        "unit": "L",
+        "name": "eau froide"
+      },
+      {
+        "qty": 500,
+        "unit": "g",
+        "name": "carcasse de poulet"
+      },
+      {
+        "qty": 2,
+        "unit": "pièces",
+        "name": "carottes"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "qty": 1,
+        "unit": "branche",
+        "name": "thym"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "feuille de laurier"
+      },
+      {
+        "qty": 0,
+        "unit": "pincée",
+        "name": "sel, poivre"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Mettre tous les ingrédients dans une grande casserole avec l'eau froide."
+      },
+      {
+        "step": 2,
+        "text": "Porter à ébullition, écumer puis réduire à feu doux."
+      },
+      {
+        "step": 3,
+        "text": "Laisser mijoter 45 min. Filtrer soigneusement et dégraisser si nécessaire."
+      },
+      {
+        "step": 4,
+        "text": "Servir chaud dans un bol. Conserve 3 jours au réfrigérateur."
+      }
+    ]
+  },
+  {
+    "id": "h-009",
+    "title": "Infusion hibiscus-grenade",
+    "description": "Tisane rouge et acidulée, riche en antioxydants, chaude ou froide",
+    "day_type": "hydric",
+    "meal_type": null,
+    "duration_min": 8,
+    "tags": [
+      "tisane",
+      "antioxydants",
+      "chaud ou froid"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 400,
+        "unit": "mL",
+        "name": "eau chaude"
+      },
+      {
+        "qty": 2,
+        "unit": "c. à café",
+        "name": "fleurs d'hibiscus séchées"
+      },
+      {
+        "qty": 50,
+        "unit": "mL",
+        "name": "jus de grenade pur (sans sucre)"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "miel (optionnel)"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Infuser l'hibiscus dans l'eau chaude 7 minutes puis filtrer."
+      },
+      {
+        "step": 2,
+        "text": "Ajouter le jus de grenade et le miel si souhaité."
+      },
+      {
+        "step": 3,
+        "text": "Servir chaud ou sur des glaçons selon la saison."
+      }
+    ]
+  },
+  {
+    "id": "h-010",
+    "title": "Soupe froide concombre-yaourt",
+    "description": "Gazpacho blanc léger, frais et crémeux",
+    "day_type": "hydric",
+    "meal_type": null,
+    "duration_min": 10,
+    "tags": [
+      "froid",
+      "léger",
+      "été"
+    ],
+    "plan_required": "essential",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "concombre"
+      },
+      {
+        "qty": 150,
+        "unit": "g",
+        "name": "yaourt grec nature 0%"
+      },
+      {
+        "qty": 150,
+        "unit": "mL",
+        "name": "eau froide"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "citron (jus)"
+      },
+      {
+        "qty": 5,
+        "unit": "feuilles",
+        "name": "menthe fraîche"
+      },
+      {
+        "qty": 0,
+        "unit": "pincée",
+        "name": "sel, poivre, cumin"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Peler et épépiner le concombre. Le couper en morceaux."
+      },
+      {
+        "step": 2,
+        "text": "Mixer avec le yaourt, l'eau, le citron et la menthe."
+      },
+      {
+        "step": 3,
+        "text": "Assaisonner. Réfrigérer 30 min avant de servir très frais."
+      }
+    ]
+  },
+  {
+    "id": "a-pdj-001",
+    "title": "Overnight oats HYDRIC",
+    "description": "Petit-déjeuner préparé la veille, léger et rassasiant",
+    "day_type": "food",
+    "meal_type": "breakfast",
+    "duration_min": 10,
+    "tags": [
+      "sans cuisson",
+      "fibres",
+      "préparation veille"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 50,
+        "unit": "g",
+        "name": "flocons d'avoine"
+      },
+      {
+        "qty": 200,
+        "unit": "mL",
+        "name": "lait végétal (avoine ou amande)"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "graines de chia"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "miel ou sirop d'érable"
+      },
+      {
+        "qty": 1,
+        "unit": "poignée",
+        "name": "fruits rouges frais ou surgelés"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Mélanger avoine, lait, chia et miel dans un bocal."
+      },
+      {
+        "step": 2,
+        "text": "Fermer et réfrigérer toute la nuit."
+      },
+      {
+        "step": 3,
+        "text": "Le matin, garnir de fruits rouges et servir directement dans le bocal."
+      }
+    ]
+  },
+  {
+    "id": "a-pdj-002",
+    "title": "Smoothie bowl énergie",
+    "description": "Bol vitaminé pour démarrer un jour alimentaire",
+    "day_type": "food",
+    "meal_type": "breakfast",
+    "duration_min": 8,
+    "tags": [
+      "fruits",
+      "rapide",
+      "vitamines"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "banane congelée"
+      },
+      {
+        "qty": 100,
+        "unit": "g",
+        "name": "fruits rouges surgelés"
+      },
+      {
+        "qty": 100,
+        "unit": "g",
+        "name": "yaourt grec nature"
+      },
+      {
+        "qty": 2,
+        "unit": "c. à soupe",
+        "name": "granola sans sucre"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "graines (lin, tournesol)"
+      },
+      {
+        "qty": 0.5,
+        "unit": "pièce",
+        "name": "kiwi tranché"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Mixer banane, fruits rouges et yaourt jusqu'à texture épaisse et lisse."
+      },
+      {
+        "step": 2,
+        "text": "Verser dans un bol. Garnir de granola, graines et kiwi."
+      }
+    ]
+  },
+  {
+    "id": "a-pdj-003",
+    "title": "Toast avocat-œuf poché",
+    "description": "Le classique healthy pour un déjeuner rassasiant",
+    "day_type": "food",
+    "meal_type": "breakfast",
+    "duration_min": 12,
+    "tags": [
+      "protéiné",
+      "bon gras",
+      "rassasiant"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 2,
+        "unit": "tranches",
+        "name": "pain complet ou au levain"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "avocat mûr"
+      },
+      {
+        "qty": 2,
+        "unit": "pièces",
+        "name": "œufs"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "jus de citron"
+      },
+      {
+        "qty": 0,
+        "unit": "pincée",
+        "name": "flocons de piment, sel, poivre"
+      },
+      {
+        "qty": 1,
+        "unit": "poignée",
+        "name": "roquette (optionnel)"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Toaster le pain. Écraser l'avocat avec le jus de citron, sel et poivre."
+      },
+      {
+        "step": 2,
+        "text": "Pocher les œufs 3 min dans de l'eau frémissante vinaigrée."
+      },
+      {
+        "step": 3,
+        "text": "Tartiner l'avocat sur les toasts, déposer les œufs pochés. Garnir de roquette et piment."
+      }
+    ]
+  },
+  {
+    "id": "a-pdj-004",
+    "title": "Porridge banane-cannelle",
+    "description": "Bol chaud et doux pour un réveil tout en douceur",
+    "day_type": "food",
+    "meal_type": "breakfast",
+    "duration_min": 10,
+    "tags": [
+      "chaud",
+      "fibres",
+      "hiver"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 60,
+        "unit": "g",
+        "name": "flocons d'avoine"
+      },
+      {
+        "qty": 300,
+        "unit": "mL",
+        "name": "lait végétal"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "banane"
+      },
+      {
+        "qty": 0.5,
+        "unit": "c. à café",
+        "name": "cannelle"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "beurre d'amande"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Faire chauffer le lait végétal. Ajouter les flocons et la cannelle."
+      },
+      {
+        "step": 2,
+        "text": "Cuire 5 min à feu doux en remuant. La texture doit être crémeuse."
+      },
+      {
+        "step": 3,
+        "text": "Verser dans un bol. Trancher la banane dessus et ajouter le beurre d'amande."
+      }
+    ]
+  },
+  {
+    "id": "a-pdj-005",
+    "title": "Yaourt grec fruits secs et graines",
+    "description": "Petit-déjeuner express protéiné sans aucune cuisson",
+    "day_type": "food",
+    "meal_type": "breakfast",
+    "duration_min": 5,
+    "tags": [
+      "express",
+      "protéiné",
+      "sans cuisson"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 200,
+        "unit": "g",
+        "name": "yaourt grec nature"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "miel"
+      },
+      {
+        "qty": 4,
+        "unit": "pièces",
+        "name": "noix"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "graines de courge"
+      },
+      {
+        "qty": 4,
+        "unit": "pièces",
+        "name": "dattes Medjool dénoyautées"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Verser le yaourt dans un bol."
+      },
+      {
+        "step": 2,
+        "text": "Hacher grossièrement les noix et couper les dattes en morceaux."
+      },
+      {
+        "step": 3,
+        "text": "Déposer sur le yaourt avec les graines. Arroser de miel."
+      }
+    ]
+  },
+  {
+    "id": "a-pdj-006",
+    "title": "Pancakes flocons d'avoine-myrtilles",
+    "description": "Pancakes légers sans farine blanche pour un brunch sain",
+    "day_type": "food",
+    "meal_type": "breakfast",
+    "duration_min": 20,
+    "tags": [
+      "brunch",
+      "sans gluten",
+      "gourmand"
+    ],
+    "plan_required": "essential",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 80,
+        "unit": "g",
+        "name": "flocons d'avoine mixés en farine"
+      },
+      {
+        "qty": 2,
+        "unit": "pièces",
+        "name": "œufs"
+      },
+      {
+        "qty": 100,
+        "unit": "mL",
+        "name": "lait végétal"
+      },
+      {
+        "qty": 0.5,
+        "unit": "c. à café",
+        "name": "levure chimique"
+      },
+      {
+        "qty": 80,
+        "unit": "g",
+        "name": "myrtilles fraîches ou surgelées"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "huile de coco"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Mixer les flocons en poudre. Mélanger avec œufs, lait et levure jusqu'à pâte lisse."
+      },
+      {
+        "step": 2,
+        "text": "Chauffer une poêle huilée à feu moyen. Verser une louche de pâte."
+      },
+      {
+        "step": 3,
+        "text": "Déposer quelques myrtilles sur chaque pancake. Cuire 2 min de chaque côté."
+      }
+    ]
+  },
+  {
+    "id": "a-pdj-007",
+    "title": "Bowl muesli-kéfir et poire",
+    "description": "Mélange croustillant avec kéfir pour la flore intestinale",
+    "day_type": "food",
+    "meal_type": "breakfast",
+    "duration_min": 5,
+    "tags": [
+      "probiotiques",
+      "croquant",
+      "express"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 150,
+        "unit": "mL",
+        "name": "kéfir de lait nature"
+      },
+      {
+        "qty": 40,
+        "unit": "g",
+        "name": "muesli sans sucre"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "poire"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "cannelle"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Verser le kéfir dans un bol. Ajouter le muesli."
+      },
+      {
+        "step": 2,
+        "text": "Trancher la poire finement et la déposer sur le muesli."
+      },
+      {
+        "step": 3,
+        "text": "Saupoudrer de cannelle. Servir immédiatement pour garder le croquant."
+      }
+    ]
+  },
+  {
+    "id": "a-pdj-008",
+    "title": "Œufs brouillés aux herbes",
+    "description": "Petit-déjeuner savoureux et protéiné en moins de 10 minutes",
+    "day_type": "food",
+    "meal_type": "breakfast",
+    "duration_min": 10,
+    "tags": [
+      "protéiné",
+      "rapide",
+      "savoureux"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 3,
+        "unit": "pièces",
+        "name": "œufs"
+      },
+      {
+        "qty": 2,
+        "unit": "tranches",
+        "name": "pain de seigle"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "ciboulette ciselée"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "beurre"
+      },
+      {
+        "qty": 0,
+        "unit": "pincée",
+        "name": "sel, poivre"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Toaster le pain. Battre les œufs avec une pincée de sel."
+      },
+      {
+        "step": 2,
+        "text": "Faire fondre le beurre à feu doux. Ajouter les œufs et remuer continuellement à la spatule."
+      },
+      {
+        "step": 3,
+        "text": "Retirer du feu avant qu'ils soient entièrement pris. Déposer sur le pain et parsemer de ciboulette."
+      }
+    ]
+  },
+  {
+    "id": "a-pdj-009",
+    "title": "Chia pudding coco-mangue",
+    "description": "Pudding exotique préparé la veille, texture crémeuse",
+    "day_type": "food",
+    "meal_type": "breakfast",
+    "duration_min": 8,
+    "tags": [
+      "préparation veille",
+      "exotique",
+      "sans cuisson"
+    ],
+    "plan_required": "essential",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 3,
+        "unit": "c. à soupe",
+        "name": "graines de chia"
+      },
+      {
+        "qty": 200,
+        "unit": "mL",
+        "name": "lait de coco léger"
+      },
+      {
+        "qty": 100,
+        "unit": "g",
+        "name": "mangue fraîche ou surgelée"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "vanille en poudre"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "miel"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Mélanger chia, lait de coco, vanille et miel dans un bocal. Bien remuer."
+      },
+      {
+        "step": 2,
+        "text": "Laisser prendre au frigo une nuit (ou 4h minimum)."
+      },
+      {
+        "step": 3,
+        "text": "Le matin, couper la mangue en dés et disposer sur le pudding."
+      }
+    ]
+  },
+  {
+    "id": "a-pdj-010",
+    "title": "Toast ricotta-figues-noisettes",
+    "description": "Petit-déjeuner gourmand et équilibré pour les matins de week-end",
+    "day_type": "food",
+    "meal_type": "breakfast",
+    "duration_min": 8,
+    "tags": [
+      "gourmand",
+      "automne",
+      "rapide"
+    ],
+    "plan_required": "essential",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 2,
+        "unit": "tranches",
+        "name": "pain complet"
+      },
+      {
+        "qty": 80,
+        "unit": "g",
+        "name": "ricotta"
+      },
+      {
+        "qty": 2,
+        "unit": "pièces",
+        "name": "figues fraîches"
+      },
+      {
+        "qty": 8,
+        "unit": "pièces",
+        "name": "noisettes concassées"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "miel d'acacia"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Toaster le pain."
+      },
+      {
+        "step": 2,
+        "text": "Étaler la ricotta généreusement."
+      },
+      {
+        "step": 3,
+        "text": "Couper les figues en quartiers et les disposer sur la ricotta. Parsemer de noisettes et arroser de miel."
+      }
+    ]
+  },
+  {
+    "id": "a-dej-001",
+    "title": "Salade protéinée légère",
+    "description": "Salade complète pour un déjeuner équilibré",
+    "day_type": "food",
+    "meal_type": "lunch",
+    "duration_min": 15,
+    "tags": [
+      "protéine",
+      "équilibre",
+      "rapide"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 100,
+        "unit": "g",
+        "name": "poulet grillé effiloché"
+      },
+      {
+        "qty": 150,
+        "unit": "g",
+        "name": "mesclun"
+      },
+      {
+        "qty": 100,
+        "unit": "g",
+        "name": "pois chiches égouttés"
+      },
+      {
+        "qty": 0.5,
+        "unit": "pièce",
+        "name": "concombre"
+      },
+      {
+        "qty": 10,
+        "unit": "pièces",
+        "name": "tomates cerises"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "huile d'olive"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "jus de citron"
+      },
+      {
+        "qty": 0,
+        "unit": "pincée",
+        "name": "sel, poivre, cumin"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Disposer le mesclun dans un grand bol."
+      },
+      {
+        "step": 2,
+        "text": "Ajouter poulet, pois chiches, concombre en dés et tomates cerises."
+      },
+      {
+        "step": 3,
+        "text": "Assaisonner avec huile, citron, cumin, sel et poivre. Mélanger et servir."
+      }
+    ]
+  },
+  {
+    "id": "a-dej-002",
+    "title": "Wrap poulet & crudités",
+    "description": "Déjeuner portable, équilibré et savoureux",
+    "day_type": "food",
+    "meal_type": "lunch",
+    "duration_min": 12,
+    "tags": [
+      "protéine",
+      "rapide",
+      "portable"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 2,
+        "unit": "pièces",
+        "name": "tortillas complètes"
+      },
+      {
+        "qty": 150,
+        "unit": "g",
+        "name": "filet de poulet cuit"
+      },
+      {
+        "qty": 2,
+        "unit": "c. à soupe",
+        "name": "houmous"
+      },
+      {
+        "qty": 0.5,
+        "unit": "pièce",
+        "name": "avocat"
+      },
+      {
+        "qty": 0.5,
+        "unit": "pièce",
+        "name": "poivron rouge"
+      },
+      {
+        "qty": 0.25,
+        "unit": "pièce",
+        "name": "concombre"
+      },
+      {
+        "qty": 1,
+        "unit": "poignée",
+        "name": "roquette"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Étaler le houmous sur chaque tortilla."
+      },
+      {
+        "step": 2,
+        "text": "Émincer le poulet, le poivron et le concombre."
+      },
+      {
+        "step": 3,
+        "text": "Disposer tous les ingrédients au centre. Rouler et couper en deux."
+      }
+    ]
+  },
+  {
+    "id": "a-dej-003",
+    "title": "Bowl quinoa légumes rôtis-feta",
+    "description": "Bowl coloré et rassasiant, idéal préparé en avance",
+    "day_type": "food",
+    "meal_type": "lunch",
+    "duration_min": 30,
+    "tags": [
+      "végétarien",
+      "meal prep",
+      "équilibre"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 80,
+        "unit": "g",
+        "name": "quinoa"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "courgette"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "poivron rouge"
+      },
+      {
+        "qty": 100,
+        "unit": "g",
+        "name": "pois chiches"
+      },
+      {
+        "qty": 50,
+        "unit": "g",
+        "name": "feta émiettée"
+      },
+      {
+        "qty": 2,
+        "unit": "c. à soupe",
+        "name": "huile d'olive"
+      },
+      {
+        "qty": 1,
+        "unit": "pincée",
+        "name": "herbes de Provence"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "tahini"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "citron (jus)"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Cuire le quinoa. Préchauffer le four à 200°C."
+      },
+      {
+        "step": 2,
+        "text": "Couper les légumes en dés, mélanger avec huile et herbes, rôtir 20 min."
+      },
+      {
+        "step": 3,
+        "text": "Préparer la sauce : tahini + jus de citron + 2 c. à soupe d'eau."
+      },
+      {
+        "step": 4,
+        "text": "Assembler : quinoa, légumes rôtis, feta, pois chiches. Arroser de sauce tahini."
+      }
+    ]
+  },
+  {
+    "id": "a-dej-004",
+    "title": "Soupe lentilles-cumin-citron",
+    "description": "Soupe épaisse, chaude et rassasiante pour les déjeuners froids",
+    "day_type": "food",
+    "meal_type": "lunch",
+    "duration_min": 35,
+    "tags": [
+      "chaud",
+      "vegan",
+      "hiver"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 150,
+        "unit": "g",
+        "name": "lentilles corail"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "qty": 2,
+        "unit": "gousses",
+        "name": "ail"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "carotte"
+      },
+      {
+        "qty": 800,
+        "unit": "mL",
+        "name": "bouillon de légumes"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "cumin moulu"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "citron (jus)"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "huile d'olive"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Faire revenir oignon et ail hachés dans l'huile. Ajouter cumin et carotte."
+      },
+      {
+        "step": 2,
+        "text": "Rincer les lentilles et les ajouter avec le bouillon. Cuire 25 min."
+      },
+      {
+        "step": 3,
+        "text": "Mixer partiellement pour une texture mi-crémeuse. Ajouter le citron. Assaisonner."
+      }
+    ]
+  },
+  {
+    "id": "a-dej-005",
+    "title": "Tartines sardines et tomates",
+    "description": "Déjeuner méditerranéen rapide, riche en oméga-3",
+    "day_type": "food",
+    "meal_type": "lunch",
+    "duration_min": 10,
+    "tags": [
+      "oméga-3",
+      "méditerranéen",
+      "express"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 2,
+        "unit": "tranches",
+        "name": "pain complet ou au levain"
+      },
+      {
+        "qty": 1,
+        "unit": "boîte",
+        "name": "sardines à l'huile d'olive"
+      },
+      {
+        "qty": 4,
+        "unit": "pièces",
+        "name": "tomates cerises"
+      },
+      {
+        "qty": 0.25,
+        "unit": "pièce",
+        "name": "oignon rouge"
+      },
+      {
+        "qty": 5,
+        "unit": "feuilles",
+        "name": "basilic frais"
+      },
+      {
+        "qty": 0,
+        "unit": "pincée",
+        "name": "sel, poivre, filet de citron"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Toaster le pain. Écraser les sardines à la fourchette."
+      },
+      {
+        "step": 2,
+        "text": "Étaler les sardines sur le pain. Couper les tomates et l'oignon en fines lamelles."
+      },
+      {
+        "step": 3,
+        "text": "Disposer les légumes sur les sardines. Finir avec basilic et citron."
+      }
+    ]
+  },
+  {
+    "id": "a-dej-006",
+    "title": "Pad thaï léger aux crevettes",
+    "description": "Version allégée du pad thaï avec nouilles de riz",
+    "day_type": "food",
+    "meal_type": "lunch",
+    "duration_min": 20,
+    "tags": [
+      "asiatique",
+      "protéiné",
+      "savoureux"
+    ],
+    "plan_required": "essential",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 100,
+        "unit": "g",
+        "name": "nouilles de riz"
+      },
+      {
+        "qty": 150,
+        "unit": "g",
+        "name": "crevettes décortiquées"
+      },
+      {
+        "qty": 2,
+        "unit": "pièces",
+        "name": "œufs"
+      },
+      {
+        "qty": 1,
+        "unit": "poignée",
+        "name": "germes de soja"
+      },
+      {
+        "qty": 2,
+        "unit": "pièces",
+        "name": "oignons verts"
+      },
+      {
+        "qty": 2,
+        "unit": "c. à soupe",
+        "name": "sauce tamari"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "huile de sésame"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "citron vert"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "cacahuètes concassées"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Cuire les nouilles al dente selon le paquet. Égoutter."
+      },
+      {
+        "step": 2,
+        "text": "Sauter les crevettes à la poêle. Pousser sur le côté et brouiller les œufs."
+      },
+      {
+        "step": 3,
+        "text": "Ajouter nouilles, tamari, germes de soja. Mélanger 2 min."
+      },
+      {
+        "step": 4,
+        "text": "Servir avec oignons verts, cacahuètes et citron vert."
+      }
+    ]
+  },
+  {
+    "id": "a-dej-007",
+    "title": "Salade de pois chiches épicée",
+    "description": "Salade vegan consistante avec une touche orientale",
+    "day_type": "food",
+    "meal_type": "lunch",
+    "duration_min": 12,
+    "tags": [
+      "vegan",
+      "épicé",
+      "fibres"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 400,
+        "unit": "g",
+        "name": "pois chiches cuits"
+      },
+      {
+        "qty": 2,
+        "unit": "pièces",
+        "name": "tomates"
+      },
+      {
+        "qty": 0.5,
+        "unit": "pièce",
+        "name": "oignon rouge"
+      },
+      {
+        "qty": 1,
+        "unit": "bouquet",
+        "name": "persil frais"
+      },
+      {
+        "qty": 2,
+        "unit": "c. à soupe",
+        "name": "huile d'olive"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "cumin"
+      },
+      {
+        "qty": 0.5,
+        "unit": "c. à café",
+        "name": "paprika fumé"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "citron (jus)"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Égoutter et rincer les pois chiches. Couper tomates et oignon en dés."
+      },
+      {
+        "step": 2,
+        "text": "Mélanger épices, huile et citron pour la vinaigrette."
+      },
+      {
+        "step": 3,
+        "text": "Mélanger tout, parsemer de persil. Peut se déguster tiède ou froid."
+      }
+    ]
+  },
+  {
+    "id": "a-dej-008",
+    "title": "Bowl saumon teriyaki-riz brun",
+    "description": "Bowl japonais équilibré avec saumon glacé maison",
+    "day_type": "food",
+    "meal_type": "lunch",
+    "duration_min": 25,
+    "tags": [
+      "japonais",
+      "oméga-3",
+      "meal prep"
+    ],
+    "plan_required": "essential",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 150,
+        "unit": "g",
+        "name": "filet de saumon"
+      },
+      {
+        "qty": 80,
+        "unit": "g",
+        "name": "riz brun"
+      },
+      {
+        "qty": 2,
+        "unit": "c. à soupe",
+        "name": "sauce tamari"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "miel"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "gingembre frais râpé"
+      },
+      {
+        "qty": 0.5,
+        "unit": "pièce",
+        "name": "concombre"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "carotte râpée"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "graines de sésame"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Cuire le riz brun. Mélanger tamari, miel et gingembre pour la sauce teriyaki."
+      },
+      {
+        "step": 2,
+        "text": "Faire mariner le saumon 10 min puis le cuire à la poêle 4 min de chaque côté en l'arrosant de sauce."
+      },
+      {
+        "step": 3,
+        "text": "Assembler le bowl : riz, saumon, légumes crus. Parsemer de sésame."
+      }
+    ]
+  },
+  {
+    "id": "a-dej-009",
+    "title": "Frittata légumes du soleil",
+    "description": "Frittata aérienne aux légumes d'été, chaude ou froide",
+    "day_type": "food",
+    "meal_type": "lunch",
+    "duration_min": 25,
+    "tags": [
+      "végétarien",
+      "protéiné",
+      "été"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 4,
+        "unit": "pièces",
+        "name": "œufs"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "courgette"
+      },
+      {
+        "qty": 0.5,
+        "unit": "pièce",
+        "name": "poivron rouge"
+      },
+      {
+        "qty": 100,
+        "unit": "g",
+        "name": "tomates cerises"
+      },
+      {
+        "qty": 30,
+        "unit": "g",
+        "name": "feta émiettée"
+      },
+      {
+        "qty": 5,
+        "unit": "feuilles",
+        "name": "basilic"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "huile d'olive"
+      },
+      {
+        "qty": 0,
+        "unit": "pincée",
+        "name": "sel, poivre"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Faire revenir les légumes coupés en dés dans l'huile 5 min. Préchauffer le four à 180°C."
+      },
+      {
+        "step": 2,
+        "text": "Battre les œufs avec sel et poivre. Verser sur les légumes dans un plat allant au four."
+      },
+      {
+        "step": 3,
+        "text": "Parsemer de feta. Enfourner 15 min. Servir avec basilic frais."
+      }
+    ]
+  },
+  {
+    "id": "a-dej-010",
+    "title": "Soupe patate douce-coco",
+    "description": "Velouté doux et onctueux, vegan et réconfortant",
+    "day_type": "food",
+    "meal_type": "lunch",
+    "duration_min": 30,
+    "tags": [
+      "vegan",
+      "velouté",
+      "hiver"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 400,
+        "unit": "g",
+        "name": "patate douce"
+      },
+      {
+        "qty": 200,
+        "unit": "mL",
+        "name": "lait de coco"
+      },
+      {
+        "qty": 400,
+        "unit": "mL",
+        "name": "bouillon de légumes"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "qty": 2,
+        "unit": "gousses",
+        "name": "ail"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "curry doux"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "huile d'olive"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Faire revenir oignon et ail dans l'huile. Ajouter le curry 1 minute."
+      },
+      {
+        "step": 2,
+        "text": "Ajouter patate douce pelée en dés et le bouillon. Cuire 20 min."
+      },
+      {
+        "step": 3,
+        "text": "Mixer. Incorporer le lait de coco. Rectifier l'assaisonnement."
+      }
+    ]
+  },
+  {
+    "id": "a-din-001",
+    "title": "Bowl quinoa & légumes rôtis",
+    "description": "Repas complet et végétarien pour finir la journée légèrement",
+    "day_type": "food",
+    "meal_type": "dinner",
+    "duration_min": 30,
+    "tags": [
+      "végétarien",
+      "quinoa",
+      "complet"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 80,
+        "unit": "g",
+        "name": "quinoa"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "courgette"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "aubergine"
+      },
+      {
+        "qty": 100,
+        "unit": "g",
+        "name": "tomates cerises"
+      },
+      {
+        "qty": 2,
+        "unit": "c. à soupe",
+        "name": "huile d'olive"
+      },
+      {
+        "qty": 1,
+        "unit": "pincée",
+        "name": "herbes de Provence"
+      },
+      {
+        "qty": 30,
+        "unit": "g",
+        "name": "feta ou parmesan"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Cuire le quinoa. Préchauffer le four à 200°C."
+      },
+      {
+        "step": 2,
+        "text": "Couper les légumes en dés, huiler, assaisonner, rôtir 20 min."
+      },
+      {
+        "step": 3,
+        "text": "Assembler : quinoa, légumes rôtis, fromage émietté."
+      }
+    ]
+  },
+  {
+    "id": "a-din-002",
+    "title": "Poisson vapeur & légumes verts",
+    "description": "Dîner ultra-léger, idéal en fin de journée alimentaire",
+    "day_type": "food",
+    "meal_type": "dinner",
+    "duration_min": 20,
+    "tags": [
+      "poisson",
+      "léger",
+      "vapeur"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 180,
+        "unit": "g",
+        "name": "filet de cabillaud ou dorade"
+      },
+      {
+        "qty": 150,
+        "unit": "g",
+        "name": "haricots verts"
+      },
+      {
+        "qty": 150,
+        "unit": "g",
+        "name": "brocoli"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "citron"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "huile d'olive"
+      },
+      {
+        "qty": 0,
+        "unit": "pincée",
+        "name": "sel, poivre, aneth"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Cuire les légumes et le poisson à la vapeur 12-15 min."
+      },
+      {
+        "step": 2,
+        "text": "Assaisonner le poisson avec citron, aneth, sel et poivre."
+      },
+      {
+        "step": 3,
+        "text": "Servir avec un filet d'huile d'olive sur les légumes."
+      }
+    ]
+  },
+  {
+    "id": "a-din-003",
+    "title": "Poulet rôti citron-herbes & patates douces",
+    "description": "Plat familial simple et équilibré",
+    "day_type": "food",
+    "meal_type": "dinner",
+    "duration_min": 45,
+    "tags": [
+      "protéiné",
+      "four",
+      "familial"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 2,
+        "unit": "pièces",
+        "name": "cuisses de poulet"
+      },
+      {
+        "qty": 300,
+        "unit": "g",
+        "name": "patate douce"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "citron"
+      },
+      {
+        "qty": 3,
+        "unit": "gousses",
+        "name": "ail"
+      },
+      {
+        "qty": 1,
+        "unit": "branche",
+        "name": "romarin"
+      },
+      {
+        "qty": 2,
+        "unit": "c. à soupe",
+        "name": "huile d'olive"
+      },
+      {
+        "qty": 0,
+        "unit": "pincée",
+        "name": "sel, poivre"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Préchauffer le four à 200°C. Couper les patates douces en quartiers."
+      },
+      {
+        "step": 2,
+        "text": "Déposer cuisses et patates dans un plat. Arroser d'huile, citron, ail et romarin."
+      },
+      {
+        "step": 3,
+        "text": "Enfourner 40 min en arrosant à mi-cuisson."
+      }
+    ]
+  },
+  {
+    "id": "a-din-004",
+    "title": "Curry de lentilles corail-épinards",
+    "description": "Curry vegan doux et crémeux prêt en 25 minutes",
+    "day_type": "food",
+    "meal_type": "dinner",
+    "duration_min": 25,
+    "tags": [
+      "vegan",
+      "curry",
+      "fibres"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 150,
+        "unit": "g",
+        "name": "lentilles corail"
+      },
+      {
+        "qty": 200,
+        "unit": "mL",
+        "name": "lait de coco"
+      },
+      {
+        "qty": 300,
+        "unit": "mL",
+        "name": "bouillon de légumes"
+      },
+      {
+        "qty": 100,
+        "unit": "g",
+        "name": "épinards frais"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "qty": 2,
+        "unit": "c. à café",
+        "name": "curry doux"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "curcuma"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "huile de coco"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Faire revenir l'oignon dans l'huile. Ajouter épices 1 min."
+      },
+      {
+        "step": 2,
+        "text": "Ajouter lentilles rincées, bouillon et lait de coco. Cuire 20 min."
+      },
+      {
+        "step": 3,
+        "text": "Incorporer les épinards 2 min avant la fin. Servir avec riz basmati si souhaité."
+      }
+    ]
+  },
+  {
+    "id": "a-din-005",
+    "title": "Soupe ramen maison allégée",
+    "description": "Ramen doux et réconfortant sans la lourdeur du restaurant",
+    "day_type": "food",
+    "meal_type": "dinner",
+    "duration_min": 30,
+    "tags": [
+      "japonais",
+      "chaud",
+      "réconfortant"
+    ],
+    "plan_required": "essential",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 100,
+        "unit": "g",
+        "name": "nouilles ramen de blé ou de riz"
+      },
+      {
+        "qty": 800,
+        "unit": "mL",
+        "name": "bouillon de poulet maison"
+      },
+      {
+        "qty": 2,
+        "unit": "pièces",
+        "name": "œufs mollets"
+      },
+      {
+        "qty": 100,
+        "unit": "g",
+        "name": "champignons shiitakés"
+      },
+      {
+        "qty": 2,
+        "unit": "pièces",
+        "name": "oignons verts"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "sauce tamari"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "gingembre frais râpé"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Cuire les œufs 7 min pour des œufs mollets. Les écaler et couper en 2."
+      },
+      {
+        "step": 2,
+        "text": "Faire chauffer le bouillon avec tamari et gingembre. Ajouter les champignons."
+      },
+      {
+        "step": 3,
+        "text": "Cuire les nouilles à part. Assembler : nouilles, bouillon chaud, œuf, oignon vert."
+      }
+    ]
+  },
+  {
+    "id": "a-din-006",
+    "title": "Dos de cabillaud en croûte d'herbes",
+    "description": "Filet de poisson élégant avec croûte croustillante de persil et noisettes",
+    "day_type": "food",
+    "meal_type": "dinner",
+    "duration_min": 25,
+    "tags": [
+      "poisson",
+      "élégant",
+      "four"
+    ],
+    "plan_required": "essential",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 2,
+        "unit": "pièces",
+        "name": "dos de cabillaud (170g chacun)"
+      },
+      {
+        "qty": 2,
+        "unit": "c. à soupe",
+        "name": "persil haché"
+      },
+      {
+        "qty": 2,
+        "unit": "c. à soupe",
+        "name": "noisettes moulues"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "chapelure complète"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "huile d'olive"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "citron"
+      },
+      {
+        "qty": 0,
+        "unit": "pincée",
+        "name": "sel, poivre"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Préchauffer le four à 190°C. Mélanger persil, noisettes, chapelure et huile."
+      },
+      {
+        "step": 2,
+        "text": "Poser les cabillauds dans un plat huilé. Répartir la croûte d'herbes dessus."
+      },
+      {
+        "step": 3,
+        "text": "Enfourner 15-18 min. Servir avec quartiers de citron et légumes vapeur."
+      }
+    ]
+  },
+  {
+    "id": "a-din-007",
+    "title": "Galettes de pois chiches-curcuma",
+    "description": "Galettes vegan croustillantes, servies avec yaourt à la menthe",
+    "day_type": "food",
+    "meal_type": "dinner",
+    "duration_min": 20,
+    "tags": [
+      "vegan",
+      "croustillant",
+      "protéiné végétal"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 400,
+        "unit": "g",
+        "name": "pois chiches cuits"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "oignon"
+      },
+      {
+        "qty": 2,
+        "unit": "gousses",
+        "name": "ail"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "curcuma"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "cumin"
+      },
+      {
+        "qty": 2,
+        "unit": "c. à soupe",
+        "name": "farine de pois chiche"
+      },
+      {
+        "qty": 100,
+        "unit": "g",
+        "name": "yaourt grec + menthe pour servir"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "huile d'olive"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Mixer grossièrement les pois chiches avec oignon, ail et épices. Ne pas trop mixer — garder de la texture."
+      },
+      {
+        "step": 2,
+        "text": "Ajouter la farine et former des galettes avec les mains."
+      },
+      {
+        "step": 3,
+        "text": "Cuire à la poêle huilée 4 min de chaque côté. Servir avec yaourt-menthe."
+      }
+    ]
+  },
+  {
+    "id": "a-din-008",
+    "title": "Gratin courge butternut-chèvre",
+    "description": "Gratin doux et fondant, végétarien et réconfortant",
+    "day_type": "food",
+    "meal_type": "dinner",
+    "duration_min": 45,
+    "tags": [
+      "végétarien",
+      "gratin",
+      "automne"
+    ],
+    "plan_required": "essential",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 600,
+        "unit": "g",
+        "name": "courge butternut"
+      },
+      {
+        "qty": 80,
+        "unit": "g",
+        "name": "chèvre frais"
+      },
+      {
+        "qty": 150,
+        "unit": "mL",
+        "name": "crème de soja légère"
+      },
+      {
+        "qty": 2,
+        "unit": "gousses",
+        "name": "ail"
+      },
+      {
+        "qty": 1,
+        "unit": "branche",
+        "name": "thym frais"
+      },
+      {
+        "qty": 0,
+        "unit": "pincée",
+        "name": "noix de muscade, sel, poivre"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Préchauffer le four à 180°C. Éplucher et trancher finement la courge."
+      },
+      {
+        "step": 2,
+        "text": "Disposer en couches dans un plat. Émietter le chèvre entre les couches."
+      },
+      {
+        "step": 3,
+        "text": "Mélanger crème, ail, thym et muscade. Verser sur la courge. Enfourner 40 min."
+      }
+    ]
+  },
+  {
+    "id": "a-din-009",
+    "title": "Crevettes sautées ail-courgettes",
+    "description": "Plat rapide, léger et parfumé pour les soirs de semaine",
+    "day_type": "food",
+    "meal_type": "dinner",
+    "duration_min": 15,
+    "tags": [
+      "rapide",
+      "léger",
+      "fruits de mer"
+    ],
+    "plan_required": "starter",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 200,
+        "unit": "g",
+        "name": "crevettes décortiquées"
+      },
+      {
+        "qty": 2,
+        "unit": "pièces",
+        "name": "courgettes"
+      },
+      {
+        "qty": 3,
+        "unit": "gousses",
+        "name": "ail"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "citron"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "huile d'olive"
+      },
+      {
+        "qty": 1,
+        "unit": "bouquet",
+        "name": "persil plat"
+      },
+      {
+        "qty": 0,
+        "unit": "pincée",
+        "name": "sel, poivre, piment doux"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Couper les courgettes en fines rondelles. Émincer l'ail."
+      },
+      {
+        "step": 2,
+        "text": "Faire sauter l'ail dans l'huile 1 min. Ajouter crevettes et courgettes. Cuire 5-6 min."
+      },
+      {
+        "step": 3,
+        "text": "Finir avec citron, persil et piment. Servir seul ou avec du riz basmati."
+      }
+    ]
+  },
+  {
+    "id": "a-din-010",
+    "title": "Tartare de saumon avocat-sésame",
+    "description": "Dîner frais et élégant sans cuisson, riche en bons gras",
+    "day_type": "food",
+    "meal_type": "dinner",
+    "duration_min": 15,
+    "tags": [
+      "cru",
+      "oméga-3",
+      "sans cuisson"
+    ],
+    "plan_required": "essential",
+    "published": true,
+    "ingredients": [
+      {
+        "qty": 200,
+        "unit": "g",
+        "name": "saumon frais (qualité sashimi)"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "avocat"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à soupe",
+        "name": "sauce tamari"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "huile de sésame"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "gingembre frais râpé"
+      },
+      {
+        "qty": 1,
+        "unit": "pièce",
+        "name": "citron vert"
+      },
+      {
+        "qty": 1,
+        "unit": "c. à café",
+        "name": "graines de sésame"
+      },
+      {
+        "qty": 2,
+        "unit": "pièces",
+        "name": "oignons verts"
+      }
+    ],
+    "steps": [
+      {
+        "step": 1,
+        "text": "Couper le saumon en petits dés réguliers. Couper l'avocat en dés similaires."
+      },
+      {
+        "step": 2,
+        "text": "Mélanger tamari, huile de sésame, gingembre et jus de citron vert."
+      },
+      {
+        "step": 3,
+        "text": "Mélanger saumon et avocat avec la sauce. Dresser dans des cercles. Parsemer de sésame et oignon vert."
+      }
+    ]
+  }
+]

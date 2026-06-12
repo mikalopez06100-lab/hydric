@@ -2,14 +2,31 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { RecipeDetailView } from "@/components/recettes/RecipeViews";
-import { DEMO_RECIPES } from "@/lib/mock-data";
+import { fetchRecipeById } from "@/lib/recipes";
+import type { Recipe } from "@/types";
 
 export default function RecipeDetailPage() {
   const params = useParams();
   const id = params.id as string;
-  const recipe = DEMO_RECIPES.find((r) => r.id === id);
+  const [recipe, setRecipe] = useState<Recipe | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchRecipeById(id)
+      .then(setRecipe)
+      .finally(() => setLoading(false));
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="flex min-h-[50vh] items-center justify-center">
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-sage border-t-transparent" />
+      </div>
+    );
+  }
 
   if (!recipe) {
     return (

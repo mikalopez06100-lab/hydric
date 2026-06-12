@@ -2,7 +2,7 @@ import Link from "next/link";
 import { CalendarDays, Droplets } from "lucide-react";
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 import { ProgressBar } from "@/components/ui/ProgressBar";
-import { formatLiters } from "@/lib/mock-data";
+import { formatLiters } from "@/lib/water";
 
 interface ActionCardsProps {
   waterTotal: number;

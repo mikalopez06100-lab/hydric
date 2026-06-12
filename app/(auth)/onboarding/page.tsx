@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useUserStore } from "@/store/useUserStore";
-import { DEMO_PROFILE } from "@/lib/mock-data";
+import { updateProfile } from "@/lib/profile";
+import { createClient } from "@/lib/supabase/client";
 import type { PlanTier } from "@/types";
 
 const PLANS: Array<{
@@ -39,23 +40,52 @@ const PLANS: Array<{
 
 export default function OnboardingPage() {
   const router = useRouter();
-  const { setProfile, loginDemo } = useUserStore();
+  const { setProfile } = useUserStore();
   const [step, setStep] = useState(1);
   const [prenom, setPrenom] = useState("");
   const [weightGoal, setWeightGoal] = useState("");
   const [selectedPlan, setSelectedPlan] = useState<PlanTier>("essential");
   const [disclaimer, setDisclaimer] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function finish() {
-    const profile = {
-      ...DEMO_PROFILE,
-      prenom: prenom || "Sophie",
+  async function finish() {
+    if (!prenom.trim()) {
+      setError("Veuillez saisir votre prénom.");
+      return;
+    }
+
+    const startDate = new Date().toISOString().split("T")[0];
+    const payload = {
+      prenom: prenom.trim(),
       plan: selectedPlan,
       weight_goal_kg: weightGoal ? parseFloat(weightGoal) : undefined,
-      start_date: new Date().toISOString().split("T")[0],
+      start_date: startDate,
     };
+
+    setSaving(true);
+    setError(null);
+
+    const supabase = createClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (!user) {
+      router.push("/login");
+      return;
+    }
+
+    const profile = await updateProfile(supabase, user.id, payload);
+    setSaving(false);
+
+    if (!profile) {
+      setError("Impossible d'enregistrer votre profil. Réessayez.");
+      return;
+    }
+
     setProfile(profile);
-    router.push("/");
+    router.push("/dashboard");
   }
 
   const inputClass =
@@ -79,9 +109,10 @@ export default function OnboardingPage() {
             Votre prénom
             <input
               type="text"
+              required
               value={prenom}
               onChange={(e) => setPrenom(e.target.value)}
-              placeholder="Sophie"
+              placeholder="Votre prénom"
               className={inputClass}
               style={{ borderRadius: 2 }}
             />
@@ -94,7 +125,7 @@ export default function OnboardingPage() {
               step="0.1"
               value={weightGoal}
               onChange={(e) => setWeightGoal(e.target.value)}
-              placeholder="62"
+              placeholder="Ex. 62"
               className={inputClass}
               style={{ borderRadius: 2 }}
             />
@@ -102,8 +133,9 @@ export default function OnboardingPage() {
 
           <button
             type="button"
-            onClick={() => setStep(2)}
-            className="btn-clay mt-auto py-3.5"
+            onClick={() => prenom.trim() && setStep(2)}
+            disabled={!prenom.trim()}
+            className="btn-clay mt-auto py-3.5 disabled:opacity-40"
           >
             Continuer
           </button>
@@ -196,26 +228,16 @@ export default function OnboardingPage() {
             </span>
           </label>
 
-          <div className="mt-auto space-y-2">
-            <button
-              type="button"
-              disabled={!disclaimer}
-              onClick={finish}
-              className="btn-clay w-full py-3.5 disabled:opacity-40"
-            >
-              Lancer ma méthode
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                loginDemo();
-                router.push("/");
-              }}
-              className="w-full py-2 font-mono text-[10px] uppercase tracking-wider text-ink-soft underline"
-            >
-              Passer — mode démo
-            </button>
-          </div>
+          {error && <p className="mt-4 text-sm text-clay-deep">{error}</p>}
+
+          <button
+            type="button"
+            disabled={!disclaimer || saving}
+            onClick={finish}
+            className="btn-clay mt-auto w-full py-3.5 disabled:opacity-40"
+          >
+            {saving ? "Enregistrement…" : "Lancer ma méthode"}
+          </button>
         </div>
       )}
     </div>

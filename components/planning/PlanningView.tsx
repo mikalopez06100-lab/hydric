@@ -4,9 +4,8 @@ import { useState } from "react";
 import { format, isSameDay } from "date-fns";
 import { fr } from "date-fns/locale";
 import { cn } from "@/lib/utils";
-import type { DayType } from "@/types";
+import type { DayType, Recipe } from "@/types";
 import { getWeekPlan } from "@/lib/day-calculator";
-import { DEMO_RECIPES } from "@/lib/mock-data";
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 import { SuggestedRecipeCard } from "@/components/tracker/WaterTracker";
 
@@ -80,19 +79,22 @@ export function WeekStrip({ startDate, selectedDate, onSelect }: WeekStripProps)
 interface DayDetailCardProps {
   date: Date;
   type: DayType;
-  waterTotal?: number;
-  waterGoal?: number;
+  recipes: Recipe[];
+  waterTotal: number;
+  waterGoal: number;
 }
 
 export function DayDetailCard({
   date,
   type,
-  waterTotal = 1250,
-  waterGoal = 2000,
+  recipes,
+  waterTotal,
+  waterGoal,
 }: DayDetailCardProps) {
   const isHydric = type === "hydric";
   const isToday = isSameDay(date, new Date());
-  const recipes = DEMO_RECIPES.filter((r) => r.day_type === type).slice(0, 2);
+  const dayRecipes = recipes.filter((r) => r.day_type === type);
+  const suggested = dayRecipes.slice(0, 2);
   const dateStr = format(date, "EEEE d", { locale: fr });
 
   return (
@@ -119,7 +121,7 @@ export function DayDetailCard({
             : "Repas équilibrés et légers. Retrouve le plaisir de manger sainement."}
         </p>
         <div className="relative mt-3 flex gap-1.5">
-          {isHydric && (
+          {isHydric && isToday && (
             <div className="flex-1 border border-bone/10 bg-bone/[0.06] p-2.5" style={{ borderRadius: 2 }}>
               <div className="mb-1 font-mono text-[9px] uppercase tracking-wider text-sage">
                 Eau
@@ -137,28 +139,44 @@ export function DayDetailCard({
               Recettes
             </div>
             <div className="font-serif text-xl font-medium text-bone">
-              {DEMO_RECIPES.filter((r) => r.day_type === type).length}
+              {dayRecipes.length}
               <span className="text-xs opacity-55"> dispo</span>
             </div>
           </div>
         </div>
       </div>
 
-      <SectionEyebrow>Suggéré pour aujourd&apos;hui</SectionEyebrow>
-      {recipes.map((r) => (
-        <SuggestedRecipeCard
-          key={r.id}
-          id={r.id}
-          title={r.title}
-          subtitle={`${r.duration_min} min · ${isHydric ? "Hydrique" : "Alimentaire"}`}
-          emoji={r.emoji ?? "🍽"}
-        />
-      ))}
+      {suggested.length > 0 && (
+        <>
+          <SectionEyebrow>Suggéré pour ce jour</SectionEyebrow>
+          {suggested.map((r) => (
+            <SuggestedRecipeCard
+              key={r.id}
+              id={r.id}
+              title={r.title}
+              subtitle={`${r.duration_min ?? "—"} min · ${isHydric ? "Hydrique" : "Alimentaire"}`}
+              emoji={r.emoji ?? "🍽"}
+            />
+          ))}
+        </>
+      )}
     </>
   );
 }
 
-export function PlanningView({ startDate }: { startDate: string }) {
+interface PlanningViewProps {
+  startDate: string;
+  recipes: Recipe[];
+  waterTotal: number;
+  waterGoal: number;
+}
+
+export function PlanningView({
+  startDate,
+  recipes,
+  waterTotal,
+  waterGoal,
+}: PlanningViewProps) {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const days = getWeekPlan(startDate, 7);
   const selected = days.find((d) => isSameDay(d.date, selectedDate)) ?? days[0];
@@ -195,7 +213,13 @@ export function PlanningView({ startDate }: { startDate: string }) {
           </div>
         ))}
       </div>
-      <DayDetailCard date={selected.date} type={selected.type} />
+      <DayDetailCard
+        date={selected.date}
+        type={selected.type}
+        recipes={recipes}
+        waterTotal={waterTotal}
+        waterGoal={waterGoal}
+      />
     </>
   );
 }

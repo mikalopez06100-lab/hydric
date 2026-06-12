@@ -1,10 +1,16 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { Lock, Star } from "lucide-react";
+import {
+  getSuggestedMealType,
+  MEAL_EMOJI,
+  MEAL_LABELS,
+  MEAL_TYPES,
+} from "@/lib/meal-type";
 import { cn } from "@/lib/utils";
-import type { DayType, PlanTier, Recipe } from "@/types";
+import type { DayType, MealType, PlanTier, Recipe } from "@/types";
 import { PLAN_GATES, getPlanLabel } from "@/lib/plan-gates";
 
 interface RecipeFiltersProps {
@@ -20,7 +26,7 @@ export function RecipeFilters({ value, onChange }: RecipeFiltersProps) {
   ];
 
   return (
-    <div className="flex gap-1.5 overflow-x-auto px-4 pb-3">
+    <div className="flex gap-1.5 overflow-x-auto px-4 pb-2">
       {pills.map((pill) => (
         <button
           key={pill.id}
@@ -34,6 +40,39 @@ export function RecipeFilters({ value, onChange }: RecipeFiltersProps) {
           {pill.label}
         </button>
       ))}
+    </div>
+  );
+}
+
+interface MealFiltersProps {
+  value: MealType;
+  onChange: (v: MealType) => void;
+  counts: Record<MealType, number>;
+}
+
+export function MealFilters({ value, onChange, counts }: MealFiltersProps) {
+  return (
+    <div className="px-4 pb-3">
+      <p className="mb-2 font-mono text-[9px] uppercase tracking-[0.14em] text-ink-soft">
+        Recettes proposées pour
+      </p>
+      <div className="flex gap-1.5 overflow-x-auto">
+        {MEAL_TYPES.map((meal) => (
+          <button
+            key={meal}
+            type="button"
+            onClick={() => onChange(meal)}
+            className={cn(
+              "shrink-0 px-3 py-2 text-left font-mono text-[10px] font-medium uppercase tracking-wider",
+              value === meal ? "filter-pill-active" : "filter-pill-inactive"
+            )}
+          >
+            <span className="mr-1">{MEAL_EMOJI[meal]}</span>
+            {MEAL_LABELS[meal]}
+            <span className="ml-1 opacity-60">({counts[meal]})</span>
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
@@ -71,7 +110,11 @@ export function RecipeCard({ recipe, userPlan, locked }: RecipeCardProps) {
               isHydric ? "bg-sage-deep" : "bg-clay-deep"
             )}
           />
-          {isHydric ? "Hydrique" : "Alimentaire"}
+          {isHydric
+            ? "Hydrique"
+            : recipe.meal_type
+              ? MEAL_LABELS[recipe.meal_type]
+              : "Alimentaire"}
         </span>
         {isLocked && (
           <span className="absolute right-2.5 top-2.5 flex h-7 w-7 items-center justify-center bg-ink/40">
@@ -122,23 +165,61 @@ interface RecipeListProps {
 
 export function RecipeList({ recipes, userPlan }: RecipeListProps) {
   const [filter, setFilter] = useState<"all" | DayType>("all");
+  const [mealFilter, setMealFilter] = useState<MealType>(getSuggestedMealType);
   const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    if (filter === "food") {
+      setMealFilter(getSuggestedMealType());
+    }
+  }, [filter]);
+
+  const foodRecipes = useMemo(
+    () => recipes.filter((r) => r.day_type === "food"),
+    [recipes]
+  );
+
+  const mealCounts = useMemo(() => {
+    const counts: Record<MealType, number> = {
+      breakfast: 0,
+      lunch: 0,
+      dinner: 0,
+    };
+    for (const recipe of foodRecipes) {
+      if (recipe.meal_type) counts[recipe.meal_type]++;
+    }
+    return counts;
+  }, [foodRecipes]);
 
   const filtered = useMemo(() => {
     let list = recipes;
-    if (filter !== "all") list = list.filter((r) => r.day_type === filter);
+    if (filter === "food") {
+      list = list.filter(
+        (r) => r.day_type === "food" && r.meal_type === mealFilter
+      );
+    } else if (filter !== "all") {
+      list = list.filter((r) => r.day_type === filter);
+    }
     if (search.trim()) {
       const q = search.toLowerCase();
       list = list.filter(
         (r) =>
           r.title.toLowerCase().includes(q) ||
           r.description?.toLowerCase().includes(q) ||
-          r.tags?.some((t) => t.toLowerCase().includes(q))
+          r.tags?.some((t) => t.toLowerCase().includes(q)) ||
+          (r.meal_type && MEAL_LABELS[r.meal_type].toLowerCase().includes(q))
       );
     }
     const limit = PLAN_GATES[userPlan].recipes_limit;
     return list.slice(0, limit === Infinity ? undefined : limit);
-  }, [recipes, filter, search, userPlan]);
+  }, [recipes, filter, mealFilter, search, userPlan]);
+
+  function handleFilterChange(next: "all" | DayType) {
+    setFilter(next);
+    if (next === "food") {
+      setMealFilter(getSuggestedMealType());
+    }
+  }
 
   return (
     <>
@@ -152,11 +233,20 @@ export function RecipeList({ recipes, userPlan }: RecipeListProps) {
           className="flex-1 bg-transparent text-[12px] text-ink outline-none placeholder:text-ink-soft"
         />
       </div>
-      <RecipeFilters value={filter} onChange={setFilter} />
+      <RecipeFilters value={filter} onChange={handleFilterChange} />
+      {filter === "food" && (
+        <MealFilters
+          value={mealFilter}
+          onChange={setMealFilter}
+          counts={mealCounts}
+        />
+      )}
       <div className="pb-4">
         {filtered.length === 0 ? (
           <p className="px-4 py-8 text-center text-sm text-ink-soft">
-            Aucune recette trouvée
+            {filter === "food"
+              ? `Aucune recette pour le ${MEAL_LABELS[mealFilter].toLowerCase()}`
+              : "Aucune recette trouvée"}
           </p>
         ) : (
           filtered.map((recipe) => (
@@ -196,7 +286,11 @@ export function RecipeDetailView({ recipe }: { recipe: Recipe }) {
             )}
             style={{ borderRadius: 2 }}
           >
-            {isHydric ? "Hydrique" : "Alimentaire"}
+            {isHydric
+              ? "Hydrique"
+              : recipe.meal_type
+                ? MEAL_LABELS[recipe.meal_type]
+                : "Alimentaire"}
           </span>
           {recipe.duration_min && (
             <span className="bg-bone-deep px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-ink-mid" style={{ borderRadius: 2 }}>
