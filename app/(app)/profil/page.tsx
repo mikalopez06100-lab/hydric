@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { ProfilHeader, StatsGrid } from "@/components/profil/ProfilViews";
 import { ProfilSettings } from "@/components/profil/ProfilSettings";
 import { GatingBanner } from "@/components/ui/GatingBanner";
+import { isDevOpenAccess } from "@/lib/dev";
 import { canAccess } from "@/lib/plan-gates";
 import { getDayNumber } from "@/lib/day-calculator";
 import { formatLiters } from "@/lib/water";
@@ -36,7 +37,8 @@ export default function ProfilPage() {
   if (!profile) return null;
 
   const activeDays = getDayNumber(profile.start_date);
-  const showChart = canAccess(profile.plan, "weight_chart");
+  const showChart =
+    canAccess(profile.plan, "weight_chart") || isDevOpenAccess();
 
   return (
     <>

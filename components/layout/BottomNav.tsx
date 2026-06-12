@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  Activity,
   CalendarDays,
   Droplets,
   Home,
@@ -13,6 +14,7 @@ import { cn } from "@/lib/utils";
 
 const tabs = [
   { href: "/dashboard", icon: Home, label: "Accueil" },
+  { href: "/tendances", icon: Activity, label: "Tendances" },
   { href: "/planning", icon: CalendarDays, label: "Plans" },
   { href: "/tracker", icon: Droplets, label: "Suivi" },
   { href: "/recettes", icon: UtensilsCrossed, label: "Recettes" },
@@ -33,7 +35,7 @@ export function BottomNav() {
               key={href}
               href={href}
               className={cn(
-                "flex w-[20%] flex-col items-center gap-1 transition-opacity",
+                "flex min-w-0 flex-1 flex-col items-center gap-0.5 transition-opacity",
                 active ? "opacity-100" : "opacity-60"
               )}
             >
@@ -46,7 +48,7 @@ export function BottomNav() {
               />
               <span
                 className={cn(
-                  "font-mono text-[9px] font-medium uppercase tracking-wider",
+                  "max-w-full truncate font-mono text-[8px] font-medium uppercase tracking-wider",
                   active ? "text-sage-deep" : "text-ink-soft"
                 )}
               >

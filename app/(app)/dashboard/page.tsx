@@ -5,6 +5,7 @@ import { TopBar } from "@/components/layout/TopBar";
 import { DayHeroBanner } from "@/components/dashboard/DayHeroBanner";
 import { QuickStats } from "@/components/dashboard/QuickStats";
 import { ActionCards } from "@/components/dashboard/ActionCards";
+import { HealthTrendsChart } from "@/components/profil/HealthTrendsChart";
 import { SuggestedRecipeCard } from "@/components/tracker/WaterTracker";
 import { getDayNumber, getDayType } from "@/lib/day-calculator";
 import { useRecipes } from "@/hooks/useRecipes";
@@ -33,6 +34,10 @@ export default function DashboardPage() {
         dayNumber={dayNumber}
         waterTotal={total_ml}
         waterGoal={goal_ml}
+      />
+      <HealthTrendsChart
+        weightGoalKg={profile.weight_goal_kg}
+        waterGoalMl={profile.water_goal_ml}
       />
       <QuickStats
         weightLost={stats.weightLost}
