@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { format, isSameDay } from "date-fns";
 import { fr } from "date-fns/locale";
 import { cn } from "@/lib/utils";
 import type { DayType, Recipe } from "@/types";
 import { getWeekPlan } from "@/lib/day-calculator";
+import { MEAL_LABELS } from "@/lib/meal-type";
+import { getSuggestedRecipesForDay } from "@/lib/planning-suggestions";
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 import { SuggestedRecipeCard } from "@/components/tracker/WaterTracker";
 
@@ -94,7 +96,10 @@ export function DayDetailCard({
   const isHydric = type === "hydric";
   const isToday = isSameDay(date, new Date());
   const dayRecipes = recipes.filter((r) => r.day_type === type);
-  const suggested = dayRecipes.slice(0, 2);
+  const suggested = useMemo(
+    () => getSuggestedRecipesForDay(recipes, date, type),
+    [recipes, date, type]
+  );
   const dateStr = format(date, "EEEE d", { locale: fr });
 
   return (
@@ -154,7 +159,11 @@ export function DayDetailCard({
               key={r.id}
               id={r.id}
               title={r.title}
-              subtitle={`${r.duration_min ?? "—"} min · ${isHydric ? "Hydrique" : "Alimentaire"}`}
+              subtitle={
+                !isHydric && r.meal_type
+                  ? `${MEAL_LABELS[r.meal_type]} · ${r.duration_min ?? "—"} min`
+                  : `${r.duration_min ?? "—"} min · ${isHydric ? "Hydrique" : "Alimentaire"}`
+              }
               emoji={r.emoji ?? "🍽"}
             />
           ))}

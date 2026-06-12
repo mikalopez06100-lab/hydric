@@ -92,6 +92,17 @@ ON CONFLICT (id) DO UPDATE SET
   published = EXCLUDED.published;
 `;
 
-const out = path.join(root, "supabase", "migrations", "011_seed_recipes_40.sql");
-fs.writeFileSync(out, sql, "utf8");
+const migrationName =
+  process.argv[3] ?? "012_seed_recipes_v2.sql";
+const out = path.join(root, "supabase", "migrations", migrationName);
+const header = `-- Catalogue HYDRIC — ${recipes.length} recettes
+-- Source: data/hydric_recipes.json
+-- Généré: ${new Date().toISOString().slice(0, 10)}
+
+`;
+const fullSql = header + sql.replace(
+  /^-- Catalogue HYDRIC.*\n-- Source:.*\n\n/,
+  ""
+);
+fs.writeFileSync(out, fullSql, "utf8");
 console.log(`Écrit ${recipes.length} recettes → ${out}`);

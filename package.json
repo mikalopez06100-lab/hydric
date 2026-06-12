@@ -12,6 +12,7 @@
     "db:status": "supabase migration list",
     "db:apply": "node scripts/apply-sql.mjs supabase/migrations/001_schema.sql supabase/migrations/002_auth_trigger.sql supabase/migrations/003_seed_recipes.sql supabase/migrations/004_grants.sql",
     "db:recipes": "node scripts/generate-recipes-migration.mjs && npx supabase db push",
+    "db:recipes:v2": "node scripts/generate-recipes-migration.mjs data/hydric_recipes.json 012_seed_recipes_v2.sql && npx supabase db push",
     "setup:supabase": "powershell -ExecutionPolicy Bypass -File scripts/setup-supabase.ps1"
   },
   "dependencies": {
