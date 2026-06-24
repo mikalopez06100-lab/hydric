@@ -88,12 +88,22 @@ export function HealthTrendsChart({
   const [metric, setMetric] = useState<Metric>("weight");
   const [data, setData] = useState<TrendsData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [fetchError, setFetchError] = useState<string | null>(null);
 
   useEffect(() => {
     setLoading(true);
+    setFetchError(null);
     void fetch(`/api/trends?period=${period}`)
-      .then((r) => (r.ok ? r.json() : null))
-      .then((json: TrendsData | null) => setData(json))
+      .then((r) => {
+        if (!r.ok) throw new Error("Impossible de charger les tendances");
+        return r.json();
+      })
+      .then((json: TrendsData) => setData(json))
+      .catch(() =>
+        setFetchError(
+          "Données indisponibles. Vérifiez votre connexion ou réactivez le projet Supabase."
+        )
+      )
       .finally(() => setLoading(false));
   }, [period]);
 
@@ -181,6 +191,10 @@ export function HealthTrendsChart({
         {loading ? (
           <div className="flex h-52 items-center justify-center">
             <p className="font-mono text-[10px] text-ink-soft">Chargement…</p>
+          </div>
+        ) : fetchError ? (
+          <div className="flex h-52 flex-col items-center justify-center gap-2 px-6 text-center">
+            <p className="text-xs text-clay-deep">{fetchError}</p>
           </div>
         ) : !hasValues ? (
           <div className="flex h-52 flex-col items-center justify-center gap-2 px-6 text-center">

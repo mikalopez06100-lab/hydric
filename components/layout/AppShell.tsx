@@ -5,6 +5,7 @@ import { ProfileHydrator } from "@/components/providers/ProfileHydrator";
 import { NotificationScheduler } from "@/components/providers/NotificationScheduler";
 import { TrackingSync } from "@/components/providers/TrackingSync";
 import { WaterHydrator } from "@/components/providers/WaterHydrator";
+import { ServiceUnavailable } from "@/components/ui/ServiceUnavailable";
 import { fulfillStripePending, hasActiveAccess } from "@/lib/access";
 import { getProfile, isProfileOnboarded } from "@/lib/profile";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
@@ -16,9 +17,15 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
   }
 
   const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  let user;
+  try {
+    const result = await supabase.auth.getUser();
+    user = result.data.user;
+  } catch {
+    return (
+      <ServiceUnavailable message="Impossible de joindre Supabase. Vérifiez que le projet n'est pas en pause sur supabase.com." />
+    );
+  }
 
   if (!user) {
     redirect("/login");

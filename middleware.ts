@@ -13,6 +13,7 @@ function isPublicPath(pathname: string): boolean {
     pathname.startsWith("/api/checkout") ||
     pathname.startsWith("/api/redeem-code") ||
     pathname.startsWith("/api/auth/dev-login") ||
+    pathname.startsWith("/api/status") ||
     (pathname.startsWith("/api/scales/") && pathname.endsWith("/callback")) ||
     pathname.startsWith("/api/cron/")
   );
@@ -52,9 +53,15 @@ export async function middleware(request: NextRequest) {
     },
   });
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  let user = null;
+  try {
+    const {
+      data: { user: authUser },
+    } = await supabase.auth.getUser();
+    user = authUser;
+  } catch {
+    // Supabase injoignable — routes publiques restent accessibles
+  }
 
   const pathname = request.nextUrl.pathname;
   const isPublic = isPublicPath(pathname);

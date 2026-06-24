@@ -2,7 +2,7 @@
 
 import { TopBar } from "@/components/layout/TopBar";
 import { QuickStats } from "@/components/dashboard/QuickStats";
-import { HealthTrendsChart } from "@/components/profil/HealthTrendsChart";
+import { HealthTrendsChartLazy } from "@/components/trends/HealthTrendsChartLazy";
 import { useStatsStore } from "@/store/useStatsStore";
 import { useUserStore } from "@/store/useUserStore";
 import { getDayNumber } from "@/lib/day-calculator";
@@ -18,7 +18,7 @@ export default function TendancesPage() {
   return (
     <>
       <TopBar title="Tendances" />
-      <HealthTrendsChart
+      <HealthTrendsChartLazy
         weightGoalKg={profile.weight_goal_kg}
         waterGoalMl={profile.water_goal_ml}
       />
