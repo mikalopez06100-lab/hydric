@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { CheckoutButton } from "@/components/landing/CheckoutButton";
 import { FaqList } from "@/components/landing/FaqList";
 import { HydricLogo } from "@/components/landing/HydricLogo";
+import { LandingPhoto, landingPhotos } from "@/components/landing/LandingVisuals";
 import { appUrl } from "@/lib/domains";
 
 export function LandingPage() {
@@ -92,31 +93,16 @@ export function LandingPage() {
             </div>
 
             <div className="hero-visual fade-in visible">
-              <span className="hero-product-tag">Night Reset · 30 ml</span>
-              <svg
-                className="hero-visual-mark"
-                viewBox="0 0 128 128"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden
-              >
-                <circle cx="64" cy="64" r="62" fill="#5C6E58" />
-                <g fill="#F4F1EA">
-                  <rect x="34" y="30" width="14" height="68" rx="1" />
-                  <rect x="80" y="30" width="14" height="68" rx="1" />
-                  <rect x="28" y="28" width="26" height="5" />
-                  <rect x="28" y="95" width="26" height="5" />
-                  <rect x="74" y="28" width="26" height="5" />
-                  <rect x="74" y="95" width="26" height="5" />
-                  <rect x="48" y="58" width="32" height="8" />
-                </g>
-                <path
-                  d="M48 62 Q56 50 64 62 T80 62"
-                  stroke="#F4F1EA"
-                  strokeWidth="2.5"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-              </svg>
+              <LandingPhoto
+                src={landingPhotos.hero}
+                alt="Femme savourant une tisane dans une cuisine lumineuse — jour hydrique HYDRIC"
+                fill
+                priority
+                className="hero-visual-photo"
+                sizes="(max-width: 1024px) 100vw, 42vw"
+              />
+              <div className="hero-visual-shade" aria-hidden />
+              <span className="hero-product-tag">Jour hydrique</span>
               <div className="hero-product-card">
                 <span className="hpc-tag">— Moyenne à J21</span>
                 <span className="hpc-val">−7 kg</span>
@@ -186,6 +172,35 @@ export function LandingPage() {
                 <li>Interdits : sucres ajoutés, sodas, jus industriels</li>
                 <li>Interdits : féculents (pain blanc, pâtes, riz blanc…)</li>
               </ul>
+            </div>
+          </div>
+
+          <div className="editorial-split fade-in">
+            <div className="editorial-photo editorial-photo-garden">
+              <LandingPhoto
+                src={landingPhotos.garden}
+                alt="Marche méditative dans un jardin méditerranéen — jour alimentaire HYDRIC"
+                fill
+                className="editorial-photo-img"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="editorial-photo-caption">
+                <span className="editorial-photo-tag">Jour alimentaire</span>
+                <p>Légèreté, mouvement doux, alimentation vivante.</p>
+              </div>
+            </div>
+            <div className="editorial-photo editorial-photo-light">
+              <LandingPhoto
+                src={landingPhotos.light}
+                alt="Moment de calme au soleil — écoute du corps avec HYDRIC"
+                fill
+                className="editorial-photo-img editorial-photo-img-top"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="editorial-photo-caption">
+                <span className="editorial-photo-tag">Le rythme</span>
+                <p>Alterner pour laisser le corps respirer — sans pression.</p>
+              </div>
             </div>
           </div>
 
@@ -421,6 +436,14 @@ export function LandingPage() {
       </section>
 
       <section className="cta-section">
+        <LandingPhoto
+          src={landingPhotos.light}
+          alt=""
+          fill
+          className="cta-section-photo cta-section-photo-top"
+          sizes="100vw"
+        />
+        <div className="cta-section-overlay" aria-hidden />
         <div className="wrap">
           <div className="eyebrow">Prête à commencer</div>
           <h2 className="cta-h2">
