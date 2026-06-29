@@ -48,10 +48,12 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
       <WaterHydrator goalMl={profile.water_goal_ml}>
         <TrackingSync>
           <NotificationScheduler />
-          <div className="relative mx-auto min-h-screen max-w-phone bg-bone pb-20">
-            {children}
-            <BottomNav />
-            <InstallPrompt />
+          <div className="min-h-screen bg-bone md:bg-rule md:py-6">
+            <div className="relative mx-auto flex min-h-screen w-full max-w-phone flex-col bg-bone pb-20 md:min-h-[calc(100dvh-3rem)] md:border md:border-rule md:shadow-[0_8px_40px_rgba(26,31,27,0.08)]">
+              <main className="flex-1">{children}</main>
+              <BottomNav />
+              <InstallPrompt />
+            </div>
           </div>
         </TrackingSync>
       </WaterHydrator>

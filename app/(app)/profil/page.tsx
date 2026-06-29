@@ -10,12 +10,14 @@ import { getDayNumber } from "@/lib/day-calculator";
 import { formatLiters } from "@/lib/water";
 import { useStatsStore } from "@/store/useStatsStore";
 import { createClient } from "@/lib/supabase/client";
+import { useProfile } from "@/components/providers/ProfileHydrator";
 import { useUserStore } from "@/store/useUserStore";
 import { useRouter } from "next/navigation";
 
 export default function ProfilPage() {
   const router = useRouter();
-  const { profile, logout } = useUserStore();
+  const profile = useProfile();
+  const logout = useUserStore((s) => s.logout);
   const stats = useStatsStore((s) => s.stats);
   const [currentWeightKg, setCurrentWeightKg] = useState<number | null>(null);
 

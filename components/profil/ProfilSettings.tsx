@@ -15,6 +15,7 @@ import {
 } from "@/lib/notifications";
 import { ScaleConnections } from "@/components/profil/ScaleConnections";
 import { WeightHistory } from "@/components/profil/WeightHistory";
+import { useProfile } from "@/components/providers/ProfileHydrator";
 import { useUserStore } from "@/store/useUserStore";
 import type { PlanTier, Profile } from "@/types";
 
@@ -45,7 +46,8 @@ function Section({
 }
 
 export function ProfilSettings() {
-  const { profile, setProfile } = useUserStore();
+  const profile = useProfile();
+  const setProfile = useUserStore((s) => s.setProfile);
   const fileRef = useRef<HTMLInputElement>(null);
 
   const [currentWeight, setCurrentWeight] = useState<string>("");
@@ -131,36 +133,58 @@ export function ProfilSettings() {
     setMessage("Profil enregistré.");
   }
 
-  async function saveCurrentWeight() {
-    const kg = parseFloat(currentWeight.replace(",", "."));
-    if (Number.isNaN(kg) || kg < 30 || kg > 300) {
-      setMessage("Poids actuel invalide (30–300 kg).");
-      return;
-    }
-    setSaving("weight");
-    setMessage(null);
-    const res = await fetch("/api/weight", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ weight_kg: kg }),
-    });
-    setSaving(null);
-    if (!res.ok) {
-      setMessage("Impossible d'enregistrer le poids.");
-      return;
-    }
-    setMessage("Poids actuel enregistré.");
-  }
-
-  async function saveGoals() {
+  async function saveWeightSettings() {
+    const kg = currentWeight.trim()
+      ? parseFloat(currentWeight.replace(",", "."))
+      : null;
     const goal = targetWeight.trim()
       ? parseFloat(targetWeight.replace(",", "."))
       : null;
-    if (goal != null && (Number.isNaN(goal) || goal < 30 || goal > 300)) {
-      setMessage("Poids cible invalide.");
+
+    if (kg != null && (Number.isNaN(kg) || kg < 30 || kg > 300)) {
+      setMessage("Poids actuel invalide (30–300 kg).");
       return;
     }
-    await saveProfile({ weight_goal_kg: goal ?? null });
+    if (goal != null && (Number.isNaN(goal) || goal < 30 || goal > 300)) {
+      setMessage("Poids cible invalide (30–300 kg).");
+      return;
+    }
+    if (kg == null && goal == null) {
+      setMessage("Saisissez au moins un poids.");
+      return;
+    }
+
+    setSaving("weight");
+    setMessage(null);
+
+    if (kg != null) {
+      const weightRes = await fetch("/api/weight", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ weight_kg: kg }),
+      });
+      if (!weightRes.ok) {
+        setSaving(null);
+        setMessage("Impossible d'enregistrer le poids actuel.");
+        return;
+      }
+    }
+
+    const profileRes = await fetch("/api/profile", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ weight_goal_kg: goal }),
+    });
+    setSaving(null);
+
+    if (!profileRes.ok) {
+      setMessage("Impossible d'enregistrer l'objectif.");
+      return;
+    }
+
+    const data = (await profileRes.json()) as { profile: Profile };
+    setProfile(data.profile);
+    setMessage("Poids enregistrés.");
   }
 
   async function saveNotifications() {
@@ -311,25 +335,14 @@ export function ProfilSettings() {
             />
           </label>
         </div>
-        <div className="mt-3 flex gap-2">
-          <button
-            type="button"
-            disabled={saving === "weight"}
-            onClick={() => void saveCurrentWeight()}
-            className="flex-1 border border-rule py-2.5 font-mono text-[10px] uppercase tracking-wider text-ink-mid disabled:opacity-50"
-            style={{ borderRadius: 2 }}
-          >
-            Enregistrer poids actuel
-          </button>
-          <button
-            type="button"
-            disabled={saving === "profile"}
-            onClick={() => void saveGoals()}
-            className="btn-clay flex-1 py-2.5 text-[11px] disabled:opacity-50"
-          >
-            Enregistrer objectifs
-          </button>
-        </div>
+        <button
+          type="button"
+          disabled={saving === "weight"}
+          onClick={() => void saveWeightSettings()}
+          className="btn-clay mt-3 w-full py-2.5 text-[11px] disabled:opacity-50"
+        >
+          {saving === "weight" ? "Enregistrement…" : "Enregistrer les poids"}
+        </button>
       </Section>
 
       <Section

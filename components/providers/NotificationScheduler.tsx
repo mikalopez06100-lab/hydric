@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { useUserStore } from "@/store/useUserStore";
+import { useProfile } from "@/components/providers/ProfileHydrator";
 import {
   getNotificationPermission,
   markReminderSent,
@@ -12,7 +12,7 @@ import {
 const CHECK_MS = 30_000;
 
 export function NotificationScheduler() {
-  const profile = useUserStore((s) => s.profile);
+  const profile = useProfile();
 
   useEffect(() => {
     if (!profile?.notifications) return;

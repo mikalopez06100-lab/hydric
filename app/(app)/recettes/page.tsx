@@ -3,10 +3,10 @@
 import { TopBar } from "@/components/layout/TopBar";
 import { RecipeList, RecipePlanBadge } from "@/components/recettes/RecipeViews";
 import { useRecipes } from "@/hooks/useRecipes";
-import { useUserStore } from "@/store/useUserStore";
+import { useProfile } from "@/components/providers/ProfileHydrator";
 
 export default function RecettesPage() {
-  const { profile } = useUserStore();
+  const profile = useProfile();
   const { recipes, loading } = useRecipes();
 
   if (!profile) return null;

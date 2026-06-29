@@ -9,12 +9,12 @@ import { HealthTrendsChartLazy } from "@/components/trends/HealthTrendsChartLazy
 import { SuggestedRecipeCard } from "@/components/tracker/WaterTracker";
 import { getDayNumber, getDayType } from "@/lib/day-calculator";
 import { useRecipes } from "@/hooks/useRecipes";
-import { useUserStore } from "@/store/useUserStore";
+import { useProfile } from "@/components/providers/ProfileHydrator";
 import { useStatsStore } from "@/store/useStatsStore";
 import { useWaterStore } from "@/store/useWaterStore";
 
 export default function DashboardPage() {
-  const { profile } = useUserStore();
+  const profile = useProfile();
   const { total_ml, goal_ml } = useWaterStore();
   const { recipes } = useRecipes();
   const stats = useStatsStore((s) => s.stats);

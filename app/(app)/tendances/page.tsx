@@ -4,11 +4,11 @@ import { TopBar } from "@/components/layout/TopBar";
 import { QuickStats } from "@/components/dashboard/QuickStats";
 import { HealthTrendsChartLazy } from "@/components/trends/HealthTrendsChartLazy";
 import { useStatsStore } from "@/store/useStatsStore";
-import { useUserStore } from "@/store/useUserStore";
+import { useProfile } from "@/components/providers/ProfileHydrator";
 import { getDayNumber } from "@/lib/day-calculator";
 
 export default function TendancesPage() {
-  const { profile } = useUserStore();
+  const profile = useProfile();
   const stats = useStatsStore((s) => s.stats);
 
   if (!profile) return null;
