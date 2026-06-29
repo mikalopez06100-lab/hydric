@@ -6,11 +6,18 @@ import { fr } from "date-fns/locale";
 import { WEIGHT_SOURCE_LABELS } from "@/lib/scales/catalog";
 import type { WeightLog } from "@/types";
 
-export function WeightHistory({ goalKg }: { goalKg?: number }) {
+export function WeightHistory({
+  goalKg,
+  refreshKey = 0,
+}: {
+  goalKg?: number;
+  refreshKey?: number;
+}) {
   const [logs, setLogs] = useState<WeightLog[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     void fetch("/api/weight")
       .then((r) => (r.ok ? r.json() : { logs: [] }))
       .then((data: { logs: WeightLog[] }) => {
@@ -23,7 +30,7 @@ export function WeightHistory({ goalKg }: { goalKg?: number }) {
         );
       })
       .finally(() => setLoading(false));
-  }, []);
+  }, [refreshKey]);
 
   if (loading) {
     return (

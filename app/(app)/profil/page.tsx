@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ProfilHeader, StatsGrid } from "@/components/profil/ProfilViews";
 import { ProfilSettings } from "@/components/profil/ProfilSettings";
 import { GatingBanner } from "@/components/ui/GatingBanner";
@@ -21,13 +21,19 @@ export default function ProfilPage() {
   const stats = useStatsStore((s) => s.stats);
   const [currentWeightKg, setCurrentWeightKg] = useState<number | null>(null);
 
-  useEffect(() => {
+  const loadCurrentWeight = useCallback(() => {
     void fetch("/api/weight")
       .then((r) => (r.ok ? r.json() : null))
       .then((data: { logs?: { weight_kg: number }[] } | null) => {
-        if (data?.logs?.[0]) setCurrentWeightKg(data.logs[0].weight_kg);
+        if (data?.logs?.[0]) {
+          setCurrentWeightKg(Number(data.logs[0].weight_kg));
+        }
       });
   }, []);
+
+  useEffect(() => {
+    loadCurrentWeight();
+  }, [loadCurrentWeight]);
 
   async function handleLogout() {
     const supabase = createClient();
@@ -66,7 +72,7 @@ export default function ProfilPage() {
           <GatingBanner feature="l'historique de progression 30j" />
         </div>
       )}
-      <ProfilSettings />
+      <ProfilSettings onWeightsSaved={loadCurrentWeight} />
       <div className="px-4 pb-8 pt-2">
         <button
           type="button"

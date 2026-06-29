@@ -21,6 +21,7 @@ export async function GET() {
     .from("weight_logs")
     .select("*")
     .eq("user_id", user.id)
+    .order("measured_at", { ascending: false, nullsFirst: false })
     .order("logged_at", { ascending: false })
     .limit(30);
 
@@ -40,19 +41,22 @@ export async function POST(req: Request) {
   const body = WeightSchema.parse(await req.json());
   const logged_at = body.logged_at ?? new Date().toISOString().split("T")[0];
 
+  await supabase
+    .from("weight_logs")
+    .delete()
+    .eq("user_id", user.id)
+    .eq("logged_at", logged_at);
+
   const { data, error } = await supabase
     .from("weight_logs")
-    .upsert(
-      {
-        user_id: user.id,
-        weight_kg: body.weight_kg,
-        logged_at,
-        measured_at: new Date().toISOString(),
-        source: "manual",
-        external_id: `manual-${logged_at}`,
-      },
-      { onConflict: "user_id,source,external_id" }
-    )
+    .insert({
+      user_id: user.id,
+      weight_kg: body.weight_kg,
+      logged_at,
+      measured_at: new Date().toISOString(),
+      source: "manual",
+      external_id: `manual-${logged_at}`,
+    })
     .select()
     .single();
 

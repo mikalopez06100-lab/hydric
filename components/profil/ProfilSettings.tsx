@@ -45,7 +45,11 @@ function Section({
   );
 }
 
-export function ProfilSettings() {
+export function ProfilSettings({
+  onWeightsSaved,
+}: {
+  onWeightsSaved?: () => void;
+}) {
   const profile = useProfile();
   const setProfile = useUserStore((s) => s.setProfile);
   const fileRef = useRef<HTMLInputElement>(null);
@@ -62,6 +66,7 @@ export function ProfilSettings() {
   const [saving, setSaving] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [checkoutLoading, setCheckoutLoading] = useState<PlanTier | null>(null);
+  const [weightRefresh, setWeightRefresh] = useState(0);
 
   const loadData = useCallback(async () => {
     const res = await fetch("/api/profile");
@@ -84,6 +89,7 @@ export function ProfilSettings() {
     setCurrentWeight(
       data.current_weight_kg != null ? String(data.current_weight_kg) : ""
     );
+    return data;
   }, [setProfile]);
 
   useEffect(() => {
@@ -165,7 +171,14 @@ export function ProfilSettings() {
       });
       if (!weightRes.ok) {
         setSaving(null);
-        setMessage("Impossible d'enregistrer le poids actuel.");
+        const err = (await weightRes.json().catch(() => null)) as {
+          error?: string;
+        } | null;
+        setMessage(
+          err?.error
+            ? `Impossible d'enregistrer le poids actuel : ${err.error}`
+            : "Impossible d'enregistrer le poids actuel."
+        );
         return;
       }
     }
@@ -175,15 +188,22 @@ export function ProfilSettings() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ weight_goal_kg: goal }),
     });
-    setSaving(null);
 
     if (!profileRes.ok) {
+      setSaving(null);
       setMessage("Impossible d'enregistrer l'objectif.");
       return;
     }
 
     const data = (await profileRes.json()) as { profile: Profile };
     setProfile(data.profile);
+    if (goal != null) {
+      setTargetWeight(String(goal));
+    }
+    await loadData();
+    setWeightRefresh((key) => key + 1);
+    onWeightsSaved?.();
+    setSaving(null);
     setMessage("Poids enregistrés.");
   }
 
@@ -308,7 +328,7 @@ export function ProfilSettings() {
       </Section>
 
       <Section title="Poids" subtitle="Historique, saisie manuelle et objectif">
-        <WeightHistory goalKg={profile.weight_goal_kg} />
+        <WeightHistory goalKg={profile.weight_goal_kg} refreshKey={weightRefresh} />
         <div className="mt-4 grid grid-cols-2 gap-3">
           <label className="block text-xs font-medium text-ink">
             Poids actuel (kg)

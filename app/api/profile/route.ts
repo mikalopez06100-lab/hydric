@@ -41,8 +41,9 @@ export async function GET() {
 
   const { data: weightLogs } = await supabase
     .from("weight_logs")
-    .select("weight_kg, logged_at")
+    .select("weight_kg, logged_at, measured_at")
     .eq("user_id", user.id)
+    .order("measured_at", { ascending: false, nullsFirst: false })
     .order("logged_at", { ascending: false })
     .limit(1);
 
