@@ -39,11 +39,8 @@ function AccesContent() {
 
   return (
     <div className="mx-auto max-w-md">
-      <Link href="/" className="mb-10 flex items-center gap-3 no-underline">
-        <HydricLogo />
-        <span className="font-sans text-sm font-semibold tracking-[0.22em] text-ink">
-          HYDRIC
-        </span>
+      <Link href="/" className="mb-10 inline-flex no-underline">
+        <HydricLogo height={44} />
       </Link>
 
       <h1 className="font-serif text-3xl font-light text-ink">

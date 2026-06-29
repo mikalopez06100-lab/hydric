@@ -18,11 +18,8 @@ export function TopBar({ title, showLogo = false, right, className }: TopBarProp
       )}
     >
       {showLogo ? (
-        <div className="flex items-center gap-2">
-          <HydricMark size={22} />
-          <span className="font-sans text-[11px] font-semibold tracking-[0.18em] text-ink">
-            HYDRIC
-          </span>
+        <div className="flex items-center">
+          <HydricMark size={24} />
         </div>
       ) : (
         <div className="text-[13px] font-semibold tracking-wide text-ink">

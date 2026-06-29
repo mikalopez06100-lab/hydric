@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     title: "HYDRIC",
   },
   icons: {
+    icon: "/brand/logo-hydric.png",
     apple: "/icons/icon-192.png",
   },
 };

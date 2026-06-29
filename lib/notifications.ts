@@ -110,8 +110,8 @@ export async function showHydrationReminder(
 
   const options: NotificationOptions = {
     body,
-    icon: "/icons/icon-192.png",
-    badge: "/icons/icon-192.png",
+    icon: "/brand/logo-hydric.png",
+    badge: "/brand/logo-hydric.png",
     tag: `hydric-hydration-${new Date().toISOString().slice(0, 13)}`,
     data: { url: "/tracker" },
   };

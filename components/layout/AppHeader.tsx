@@ -61,13 +61,10 @@ export function AppHeader() {
       <div className="flex items-center gap-2 px-[18px] pb-3 pt-3.5">
         <Link
           href="/dashboard"
-          className="flex shrink-0 items-center gap-2"
+          className="flex shrink-0 items-center"
           aria-label="Accueil HYDRIC"
         >
-          <HydricMark size={22} />
-          <span className="font-sans text-[11px] font-semibold tracking-[0.18em] text-ink sm:inline">
-            HYDRIC
-          </span>
+          <HydricMark size={24} />
         </Link>
 
         <p className="min-w-0 flex-1 truncate text-center text-[13px] font-semibold tracking-wide text-ink">

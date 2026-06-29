@@ -109,13 +109,10 @@ export default function LoginPage() {
         </div>
 
         <div className="flex flex-1 flex-col items-center justify-center text-center">
-          <div className="mb-7">
-            <HydricMark size={88} variant="outline" />
+          <div className="mb-6">
+            <HydricMark size={56} />
           </div>
-          <div className="font-sans text-[15px] font-semibold tracking-[0.32em]">
-            HYDRIC
-          </div>
-          <p className="mb-8 mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-bone/50">
+          <p className="mb-8 font-mono text-[10px] uppercase tracking-[0.2em] text-bone/50">
             — La méthode —
           </p>
 

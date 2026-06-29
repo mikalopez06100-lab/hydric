@@ -37,8 +37,7 @@ export function LandingPage() {
       <nav>
         <div className="nav-inner">
           <a href="#" className="nav-logo">
-            <HydricLogo />
-            <span>HYDRIC</span>
+            <HydricLogo height={44} priority />
           </a>
           <div className="nav-links">
             <a href="#methode">La méthode</a>
@@ -445,8 +444,7 @@ export function LandingPage() {
       <footer>
         <div className="footer-grid">
           <a href="#" className="footer-mark">
-            <HydricLogo size={32} />
-            <span>HYDRIC</span>
+            <HydricLogo height={48} />
           </a>
           <div className="footer-links">
             <a href="#methode">La méthode</a>

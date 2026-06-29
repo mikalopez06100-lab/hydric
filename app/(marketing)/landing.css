@@ -100,12 +100,8 @@ nav {
   padding: 16px 48px;
   display: flex; align-items: center; justify-content: space-between;
 }
-.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.nav-logo svg { width: 28px; height: 28px; }
-.nav-logo span {
-  font-family: var(--sans); font-weight: 600;
-  letter-spacing: .22em; font-size: .82rem; color: var(--ink);
-}
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
+.nav-logo img { display: block; }
 .nav-links { display: flex; align-items: center; gap: 36px; }
 .nav-links a {
   font-family: var(--sans); font-size: .82rem; font-weight: 500;
@@ -562,12 +558,8 @@ footer {
   display: grid; grid-template-columns: auto 1fr auto; gap: 48px;
   align-items: center;
 }
-.footer-mark { display: flex; align-items: center; gap: 12px; }
-.footer-mark svg { width: 32px; height: 32px; }
-.footer-mark span {
-  font-family: var(--sans); font-weight: 600;
-  letter-spacing: .22em; font-size: .82rem; color: var(--bone);
-}
+.footer-mark { display: flex; align-items: center; }
+.footer-mark img { display: block; }
 .footer-links { display: flex; gap: 28px; flex-wrap: wrap; justify-content: center; }
 .footer-links a {
   font-family: var(--sans); font-size: .78rem; color: rgba(244,241,234,.45);

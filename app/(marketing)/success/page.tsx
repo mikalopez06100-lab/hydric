@@ -4,7 +4,7 @@ import { HydricLogo } from "@/components/landing/HydricLogo";
 export default function SuccessPage() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-bone px-6 py-12 text-center">
-      <HydricLogo size={56} />
+      <HydricLogo height={64} />
       <h1 className="mt-6 font-serif text-3xl font-light text-ink">
         Bienvenue dans HYDRIC
       </h1>
