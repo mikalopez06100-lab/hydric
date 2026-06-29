@@ -116,7 +116,9 @@ export async function middleware(request: NextRequest) {
 
   if (user && pathname.startsWith("/login")) {
     const dashUrl = request.nextUrl.clone();
-    dashUrl.pathname = "/dashboard";
+    const next = request.nextUrl.searchParams.get("next");
+    dashUrl.pathname = next?.startsWith("/") ? next : "/dashboard";
+    dashUrl.search = "";
     return withCookies(supabaseResponse, NextResponse.redirect(dashUrl));
   }
 

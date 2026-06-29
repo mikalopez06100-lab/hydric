@@ -3,7 +3,6 @@
 import {
   createContext,
   useContext,
-  useLayoutEffect,
   type ReactNode,
 } from "react";
 import type { Profile } from "@/types";
@@ -25,11 +24,7 @@ export function ProfileHydrator({
   profile: Profile;
   children: ReactNode;
 }) {
-  const setProfile = useUserStore((s) => s.setProfile);
-
-  useLayoutEffect(() => {
-    setProfile(profile);
-  }, [profile, setProfile]);
+  useUserStore.setState({ profile });
 
   return (
     <ProfileContext.Provider value={profile}>{children}</ProfileContext.Provider>

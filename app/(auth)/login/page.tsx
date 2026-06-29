@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { HydricMark } from "@/components/ui/HydricMark";
 import { getDevAuthPassword, isMagicLinkEnabled } from "@/lib/auth";
 import { createClient, getAppUrl } from "@/lib/supabase/client";
@@ -14,7 +14,6 @@ const ERROR_MESSAGES: Record<string, string> = {
 };
 
 export default function LoginPage() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const errorCode = searchParams.get("error");
   const magicLink = isMagicLinkEnabled();
@@ -55,8 +54,8 @@ export default function LoginPage() {
       return;
     }
 
-    router.push(searchParams.get("next") || "/dashboard");
-    router.refresh();
+    const next = searchParams.get("next") || "/dashboard";
+    window.location.assign(next);
   }
 
   async function handleMagicLink(e: React.FormEvent) {
