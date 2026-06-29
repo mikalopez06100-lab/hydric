@@ -47,9 +47,9 @@ export function getPlanLabel(plan: PlanTier): string {
 
 export function getPlanPrice(plan: PlanTier): string {
   const prices: Record<PlanTier, string> = {
-    starter: "29 €/mois",
-    essential: "49 €/mois",
-    premium: "79 €/mois",
+    starter: "6,90 €/mois",
+    essential: "9,90 €/mois",
+    premium: "15,90 €/mois",
   };
   return prices[plan];
 }

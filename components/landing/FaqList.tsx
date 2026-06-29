@@ -5,11 +5,11 @@ import { useState } from "react";
 const FAQ = [
   {
     q: "La méthode HYDRIC, c'est du jeûne ?",
-    a: "Non. HYDRIC n'est pas du jeûne. Un jour hydrique autorise les bouillons, tisanes, soupes légères, jus dilués — ton corps reçoit des nutriments et n'est jamais en état de privation totale.",
+    a: "Non. HYDRIC n'est pas du jeûne. Un jour hydrique autorise les bouillons, tisanes, jus dilués — ton corps reçoit des nutriments et n'est jamais en état de privation totale.",
   },
   {
     q: "Est-ce que j'aurai faim les jours hydriques ?",
-    a: "Les premières 48 heures, parfois oui. Le corps s'adapte généralement après la première semaine — et les membres de la communauté sont là pour passer ce cap ensemble.",
+    a: "Les premières 24h oui — mais le lendemain on se nourrit normalement et on apprécie tellement les saveurs. Les membres de la communauté sont là pour passer ce cap ensemble.",
   },
   {
     q: "Puis-je faire du sport pendant un jour hydrique ?",

@@ -84,7 +84,7 @@ p { font-size: 1rem; color: var(--ink-mid); line-height: 1.65; }
   letter-spacing: .06em; color: var(--ink); text-decoration: none;
   padding: 16px 0; transition: gap .2s, color .2s;
 }
-.btn-ghost::after { content: "â†’"; transition: transform .2s; color: var(--sage-deep); }
+.btn-ghost::after { content: "→"; transition: transform .2s; color: var(--sage-deep); }
 .btn-ghost:hover { color: var(--sage-deep); gap: 16px; }
 
 /* â”€â”€â”€ Nav â”€â”€â”€ */

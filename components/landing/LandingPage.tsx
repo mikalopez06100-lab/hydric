@@ -120,7 +120,7 @@ export function LandingPage() {
               </svg>
               <div className="hero-product-card">
                 <span className="hpc-tag">— Moyenne à J21</span>
-                <span className="hpc-val">−2,8 kg</span>
+                <span className="hpc-val">−7 kg</span>
                 <span className="hpc-sub">+ digestion apaisée</span>
               </div>
             </div>
@@ -169,7 +169,6 @@ export function LandingPage() {
                 <li>Eau, tisanes, infusions</li>
                 <li>Bouillons clairs maison</li>
                 <li>Jus dilués (≤ 200 ml)</li>
-                <li>Soupes légères du soir</li>
               </ul>
             </div>
             <div className="day-card day-alim">
@@ -179,13 +178,14 @@ export function LandingPage() {
               </h3>
               <p className="day-desc">
                 Tu manges normalement, sans restriction calorique. Fibres et
-                protéines maigres, sans interdiction.
+                protéines maigres — certains aliments sont à éviter.
               </p>
               <ul className="day-items">
                 <li>Légumes à volonté</li>
                 <li>Protéines maigres</li>
                 <li>Légumineuses, céréales complètes</li>
-                <li>Aucun aliment formellement interdit</li>
+                <li>Interdits : sucres ajoutés, sodas, jus industriels</li>
+                <li>Interdits : féculents (pain blanc, pâtes, riz blanc…)</li>
               </ul>
             </div>
           </div>
@@ -205,7 +205,7 @@ export function LandingPage() {
               {
                 n: "03",
                 t: "La communauté te porte",
-                p: "Accès au groupe WhatsApp privé des membres HYDRIC.",
+                p: "Accès au groupe WhatsApp privé des membres HYDRIC (à partir du plan Essentiel).",
               },
               {
                 n: "04",
@@ -245,8 +245,8 @@ export function LandingPage() {
           <div className="results-grid fade-in">
             {[
               {
-                q: "En 3 semaines j'ai perdu les 3 kg qui me résistaient depuis 2 ans.",
-                stat: "Résultat J21 · −2,8 kg",
+                q: "En 3 semaines on perd minimum 6 à 7 kg. Moi, j'en ai perdu 7 — et certaines ont perdu entre 9 et 10 kg le premier mois.",
+                stat: "Résultat J21 · −7 kg",
                 name: "Marie, 44 ans · Lyon",
               },
               {
@@ -279,8 +279,8 @@ export function LandingPage() {
             </div>
             <div className="number-card">
               <span className="number-tag">Mesure</span>
-              <div className="number-val">−2,8</div>
-              <p className="number-label">Kilos en moyenne à J21</p>
+              <div className="number-val">−7</div>
+              <p className="number-label">Kilos perdus en moyenne à J21 (6 à 7 kg)</p>
             </div>
             <div className="number-card">
               <span className="number-tag">Rétention</span>
@@ -353,7 +353,7 @@ export function LandingPage() {
             <div className="price-card">
               <div className="price-tier">— Starter</div>
               <div className="price-val">
-                29 €<span>/mois</span>
+                6,90 €<span>/mois</span>
               </div>
               <div className="price-anchor">Sans engagement</div>
               <ul className="price-features">
@@ -368,7 +368,7 @@ export function LandingPage() {
             <div className="price-card featured">
               <div className="price-tier">— Essentiel</div>
               <div className="price-val">
-                49 €<span>/mois</span>
+                9,90 €<span>/mois</span>
               </div>
               <div className="price-anchor">Le plus choisi · 73 %</div>
               <ul className="price-features">
@@ -376,6 +376,7 @@ export function LandingPage() {
                 <li>Toutes les recettes</li>
                 <li>Planning personnalisé</li>
                 <li>Stats 30 jours &amp; favoris</li>
+                <li>Accès au groupe WhatsApp</li>
                 <li>Garantie 14 jours</li>
               </ul>
               <CheckoutButton plan="essential" label="Rejoindre Essentiel" variant="primary" />
@@ -384,12 +385,13 @@ export function LandingPage() {
             <div className="price-card">
               <div className="price-tier">— Premium</div>
               <div className="price-val">
-                79 €<span>/mois</span>
+                15,90 €<span>/mois</span>
               </div>
               <div className="price-anchor">Accompagnement renforcé</div>
               <ul className="price-features">
                 <li>Tout le plan Essentiel</li>
-                <li>Session 1:1 mensuelle</li>
+                <li>Session 1:1 une fois par semaine</li>
+                <li>Accès au groupe WhatsApp</li>
                 <li>Export PDF</li>
                 <li>Stats 90 jours</li>
               </ul>

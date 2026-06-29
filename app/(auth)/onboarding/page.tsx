@@ -16,25 +16,26 @@ const PLANS: Array<{
   {
     id: "starter",
     name: "Starter",
-    price: "29 €/mois",
+    price: "6,90 €/mois",
     features: ["Dashboard", "Tracker eau", "5 recettes", "Planning 7j"],
   },
   {
     id: "essential",
     name: "Essentiel",
-    price: "49 €/mois",
+    price: "9,90 €/mois",
     features: [
       "Toutes les recettes",
       "Planning personnalisé",
       "Stats 30 jours",
+      "Groupe WhatsApp",
       "Favoris",
     ],
   },
   {
     id: "premium",
     name: "Premium",
-    price: "79 €/mois",
-    features: ["Export PDF", "Stats 90j", "Session 1:1 mensuelle"],
+    price: "15,90 €/mois",
+    features: ["Export PDF", "Stats 90j", "Session 1:1 hebdomadaire", "Groupe WhatsApp"],
   },
 ];
 
