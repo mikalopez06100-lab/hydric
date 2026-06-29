@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export const HYDRIC_LOGO_PATH = "/brand/logo-hydric.png";
@@ -9,9 +8,7 @@ export function HydricLogo({
   className,
   priority,
 }: {
-  /** Hauteur affichée en px */
   height?: number;
-  /** Alias rétrocompatible */
   size?: number;
   className?: string;
   priority?: boolean;
@@ -19,13 +16,15 @@ export function HydricLogo({
   const h = height ?? size ?? 40;
 
   return (
-    <Image
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
       src={HYDRIC_LOGO_PATH}
       alt="HYDRIC"
       width={h}
       height={h}
-      priority={priority}
-      className={cn("w-auto object-contain", className)}
+      decoding="async"
+      fetchPriority={priority ? "high" : "auto"}
+      className={cn("block w-auto object-contain", className)}
       style={{ height: h, width: "auto" }}
     />
   );
