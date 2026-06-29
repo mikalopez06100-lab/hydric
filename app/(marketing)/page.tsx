@@ -1,20 +1,5 @@
-import { redirect } from "next/navigation";
 import { LandingPage } from "@/components/landing/LandingPage";
-import { createClient } from "@/lib/supabase/server";
 
-export default async function HomePage() {
-  try {
-    const supabase = await createClient();
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-
-    if (user) {
-      redirect("/dashboard");
-    }
-  } catch {
-    // Supabase injoignable (projet en pause, réseau…) — afficher la landing
-  }
-
+export default function HomePage() {
   return <LandingPage />;
 }

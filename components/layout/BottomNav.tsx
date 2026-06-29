@@ -6,6 +6,7 @@ import {
   Activity,
   CalendarDays,
   Droplets,
+  Dumbbell,
   Home,
   User,
   UtensilsCrossed,
@@ -18,6 +19,7 @@ const tabs = [
   { href: "/planning", icon: CalendarDays, label: "Plans" },
   { href: "/tracker", icon: Droplets, label: "Suivi" },
   { href: "/recettes", icon: UtensilsCrossed, label: "Recettes" },
+  { href: "/exercices", icon: Dumbbell, label: "Sport" },
   { href: "/profil", icon: User, label: "Profil" },
 ];
 

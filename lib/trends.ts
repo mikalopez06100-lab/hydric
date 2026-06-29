@@ -74,6 +74,14 @@ function inBucket(date: Date, key: string, period: TrendPeriod): boolean {
   return bucketKey(date, period) === key;
 }
 
+function trimTrendPoints(points: TrendPoint[]): TrendPoint[] {
+  const firstWithData = points.findIndex((p) => p.value != null);
+  if (firstWithData === -1) {
+    return points.length > 0 ? [points[points.length - 1]!] : [];
+  }
+  return points.slice(firstWithData);
+}
+
 export function buildWeightTrend(
   logs: WeightRow[],
   period: TrendPeriod
@@ -83,20 +91,22 @@ export function buildWeightTrend(
     (a, b) => weightAt(a).getTime() - weightAt(b).getTime()
   );
 
-  return buckets.map((key) => {
-    const inRange = sorted.filter((row) => inBucket(weightAt(row), key, period));
-    if (!inRange.length) {
-      return { key, label: bucketLabel(key, period), value: null };
-    }
-    const avg =
-      inRange.reduce((sum, row) => sum + Number(row.weight_kg), 0) /
-      inRange.length;
-    return {
-      key,
-      label: bucketLabel(key, period),
-      value: Math.round(avg * 100) / 100,
-    };
-  });
+  return trimTrendPoints(
+    buckets.map((key) => {
+      const inRange = sorted.filter((row) => inBucket(weightAt(row), key, period));
+      if (!inRange.length) {
+        return { key, label: bucketLabel(key, period), value: null };
+      }
+      const avg =
+        inRange.reduce((sum, row) => sum + Number(row.weight_kg), 0) /
+        inRange.length;
+      return {
+        key,
+        label: bucketLabel(key, period),
+        value: Math.round(avg * 100) / 100,
+      };
+    })
+  );
 }
 
 export function buildHydrationTrend(
@@ -108,23 +118,25 @@ export function buildHydrationTrend(
     (a, b) => waterAt(a).getTime() - waterAt(b).getTime()
   );
 
-  return buckets.map((key) => {
-    const inRange = sorted.filter((row) => inBucket(waterAt(row), key, period));
-    if (!inRange.length) {
-      return { key, label: bucketLabel(key, period), value: null };
-    }
-    const total = inRange.reduce((sum, row) => sum + row.amount_ml, 0);
-    const activeDays = new Set(
-      inRange.map((row) => format(waterAt(row), "yyyy-MM-dd"))
-    ).size;
-    const value =
-      period === "day" ? total : Math.round(total / Math.max(1, activeDays));
-    return {
-      key,
-      label: bucketLabel(key, period),
-      value,
-    };
-  });
+  return trimTrendPoints(
+    buckets.map((key) => {
+      const inRange = sorted.filter((row) => inBucket(waterAt(row), key, period));
+      if (!inRange.length) {
+        return { key, label: bucketLabel(key, period), value: null };
+      }
+      const total = inRange.reduce((sum, row) => sum + row.amount_ml, 0);
+      const activeDays = new Set(
+        inRange.map((row) => format(waterAt(row), "yyyy-MM-dd"))
+      ).size;
+      const value =
+        period === "day" ? total : Math.round(total / Math.max(1, activeDays));
+      return {
+        key,
+        label: bucketLabel(key, period),
+        value,
+      };
+    })
+  );
 }
 
 export function getTrendDomain(

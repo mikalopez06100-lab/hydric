@@ -10,7 +10,9 @@ export function isSupabaseConfigured(): boolean {
 
 export function getAppUrl(): string {
   if (typeof window !== "undefined") {
-    return window.location.origin;
+    return process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") ?? window.location.origin;
   }
-  return process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3044";
+  return process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "") ?? "http://localhost:3044";
 }
+
+export { appUrl, marketingUrl, isDomainSplit } from "@/lib/domains";

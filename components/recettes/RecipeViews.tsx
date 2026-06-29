@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { Lock, Star } from "lucide-react";
+import { ContentHero } from "@/components/ui/ContentHero";
 import {
   getSuggestedMealType,
   MEAL_EMOJI,
@@ -91,15 +92,16 @@ export function RecipeCard({ recipe, userPlan, locked }: RecipeCardProps) {
 
   const content = (
     <article className="card-v2 mx-4 mb-2.5 overflow-hidden">
-      <div
-        className={cn(
-          "relative flex h-[116px] items-center justify-center text-4xl text-bone/70",
-          isHydric
-            ? "bg-gradient-to-br from-sage to-sage-darker"
-            : "bg-gradient-to-br from-clay to-clay-deep"
-        )}
-      >
-        {recipe.emoji ?? "🍽"}
+      <div className="relative">
+        <ContentHero
+          imageUrl={recipe.image_url}
+          emoji={recipe.emoji ?? "🍽"}
+          gradientClass={
+            isHydric
+              ? "bg-gradient-to-br from-sage to-sage-darker"
+              : "bg-gradient-to-br from-clay to-clay-deep"
+          }
+        />
         <span
           className="absolute left-2.5 top-2.5 flex items-center gap-1.5 bg-paper/95 px-2.5 py-1 font-mono text-[9px] font-medium uppercase tracking-wider text-ink"
           style={{ borderRadius: 2 }}
@@ -263,16 +265,16 @@ export function RecipeDetailView({ recipe }: { recipe: Recipe }) {
 
   return (
     <div className="pb-24">
-      <div
-        className={cn(
-          "relative flex h-40 items-center justify-center text-6xl text-bone/70",
+      <ContentHero
+        size="detail"
+        imageUrl={recipe.image_url}
+        emoji={recipe.emoji ?? "🍽"}
+        gradientClass={
           isHydric
             ? "bg-gradient-to-br from-sage to-sage-darker"
             : "bg-gradient-to-br from-clay to-clay-deep"
-        )}
-      >
-        {recipe.emoji ?? "🍽"}
-      </div>
+        }
+      />
       <div className="px-5 py-5">
         <h1 className="font-serif text-2xl font-medium text-ink">{recipe.title}</h1>
         <p className="mt-1 text-sm text-ink-mid">{recipe.description}</p>

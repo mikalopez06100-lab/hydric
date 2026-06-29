@@ -82,3 +82,30 @@ export interface Recipe {
   published: boolean;
   emoji?: string;
 }
+
+export type ExerciseCategory =
+  | "cardio"
+  | "souplesse"
+  | "renforcement"
+  | "mobilite";
+
+export type ExerciseIntensity = "douce" | "moderee";
+
+export interface ExerciseStep {
+  step: number;
+  text: string;
+}
+
+export interface Exercise {
+  id: string;
+  title: string;
+  description: string;
+  category: ExerciseCategory;
+  intensity: ExerciseIntensity;
+  duration_min: number;
+  tags?: string[];
+  steps: ExerciseStep[];
+  emoji: string;
+  image_url?: string;
+  published: boolean;
+}

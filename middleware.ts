@@ -1,6 +1,14 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { GRANT_COOKIE, applyGrantToUser } from "@/lib/access";
+import {
+  appUrl,
+  isAppHost,
+  isDomainSplit,
+  isMarketingHost,
+  isMarketingOnlyPath,
+  marketingUrl,
+} from "@/lib/domains";
 
 function isPublicPath(pathname: string): boolean {
   if (pathname === "/") return true;
@@ -26,9 +34,17 @@ function withCookies(from: NextResponse, to: NextResponse) {
   return to;
 }
 
+function redirectExternal(url: string, supabaseResponse: NextResponse) {
+  return withCookies(supabaseResponse, NextResponse.redirect(url));
+}
+
 export async function middleware(request: NextRequest) {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  const hostname = request.headers.get("host") ?? "";
+  const pathname = request.nextUrl.pathname;
+  const search = request.nextUrl.search;
 
   if (!supabaseUrl || !supabaseKey) {
     return NextResponse.next();
@@ -63,13 +79,38 @@ export async function middleware(request: NextRequest) {
     // Supabase injoignable — routes publiques restent accessibles
   }
 
-  const pathname = request.nextUrl.pathname;
+  if (isDomainSplit()) {
+    if (isMarketingHost(hostname)) {
+      const isApi = pathname.startsWith("/api/");
+      if (!isMarketingOnlyPath(pathname) && !isApi) {
+        return redirectExternal(
+          appUrl(`${pathname}${search}`),
+          supabaseResponse
+        );
+      }
+      return supabaseResponse;
+    }
+
+    if (isAppHost(hostname) && pathname === "/") {
+      const target = user ? "/dashboard" : marketingUrl("/");
+      if (target.startsWith("http")) {
+        return redirectExternal(target, supabaseResponse);
+      }
+      const local = request.nextUrl.clone();
+      local.pathname = target;
+      return withCookies(supabaseResponse, NextResponse.redirect(local));
+    }
+  }
+
   const isPublic = isPublicPath(pathname);
   const isWebhook = pathname.startsWith("/api/webhooks");
 
   if (!user && !isPublic && !isWebhook) {
     const loginUrl = request.nextUrl.clone();
     loginUrl.pathname = "/login";
+    if (pathname.startsWith("/admin")) {
+      loginUrl.searchParams.set("next", `${pathname}${search}`);
+    }
     return withCookies(supabaseResponse, NextResponse.redirect(loginUrl));
   }
 

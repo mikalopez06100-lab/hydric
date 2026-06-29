@@ -1,0 +1,162 @@
+[
+  {
+    "id": "ex-001",
+    "title": "Marche active",
+    "description": "Marche à allure soutenue mais confortable, idéale les jours hydriques pour activer la circulation sans fatiguer le corps.",
+    "category": "cardio",
+    "intensity": "douce",
+    "duration_min": 30,
+    "tags": ["extérieur", "débutant"],
+    "emoji": "🚶",
+    "published": true,
+    "steps": [
+      { "step": 1, "text": "Échauffez-vous 5 minutes à allure lente." },
+      { "step": 2, "text": "Marchez 20 minutes à allure active (vous devez pouvoir parler)." },
+      { "step": 3, "text": "Terminez par 5 minutes de marche lente et étirements légers." }
+    ]
+  },
+  {
+    "id": "ex-002",
+    "title": "Yoga doux",
+    "description": "Séquence de postures douces pour relâcher les tensions, améliorer la respiration et accompagner les journées d'hydratation.",
+    "category": "souplesse",
+    "intensity": "douce",
+    "duration_min": 25,
+    "tags": ["intérieur", "respiration"],
+    "emoji": "🧘",
+    "published": true,
+    "steps": [
+      { "step": 1, "text": "Installez-vous sur un tapis, 2 minutes de respiration abdominale." },
+      { "step": 2, "text": "Enchaînez chat-vache, posture de l'enfant et torsion assise (3 cycles)." },
+      { "step": 3, "text": "Terminez en posture jambes au mur 5 minutes, yeux fermés." }
+    ]
+  },
+  {
+    "id": "ex-003",
+    "title": "Étirements complets",
+    "description": "Routine d'étirements pour délier le dos, les hanches et les jambes après une journée sédentaire ou un jour hydrique.",
+    "category": "souplesse",
+    "intensity": "douce",
+    "duration_min": 15,
+    "tags": ["rapide", "récupération"],
+    "emoji": "🤸",
+    "published": true,
+    "steps": [
+      { "step": 1, "text": "Étirez le cou et les épaules : 30 secondes par côté." },
+      { "step": 2, "text": "Étirement des fléchisseurs de hanche et des ischio-jambiers (2 min chaque)." },
+      { "step": 3, "text": "Finissez par une torsion douce du dos debout, 1 minute par côté." }
+    ]
+  },
+  {
+    "id": "ex-004",
+    "title": "Pilates au sol",
+    "description": "Renforcement en douceur du centre du corps (abdominaux profonds) sans impact, compatible avec une alimentation légère.",
+    "category": "renforcement",
+    "intensity": "moderee",
+    "duration_min": 20,
+    "tags": ["gainage", "posture"],
+    "emoji": "💪",
+    "published": true,
+    "steps": [
+      { "step": 1, "text": "Position neutre allongée, engagez le transverse (respiration en 4 temps)." },
+      { "step": 2, "text": "Enchaînez le hundred, le single leg stretch et le bridge (10 répétitions chacun)." },
+      { "step": 3, "text": "Étirez le dos en posture de l'enfant 2 minutes." }
+    ]
+  },
+  {
+    "id": "ex-005",
+    "title": "Vélo doux",
+    "description": "Séance à intensité modérée sur vélo d'appartement ou en extérieur, pour brûler des calories sans solliciter les articulations.",
+    "category": "cardio",
+    "intensity": "moderee",
+    "duration_min": 30,
+    "tags": ["cardio", "faible impact"],
+    "emoji": "🚴",
+    "published": true,
+    "steps": [
+      { "step": 1, "text": "5 minutes à résistance légère, pédalez en douceur." },
+      { "step": 2, "text": "20 minutes à rythme régulier (fréquence cardiaque modérée)." },
+      { "step": 3, "text": "5 minutes de retour au calme, étirez quadriceps et mollets." }
+    ]
+  },
+  {
+    "id": "ex-006",
+    "title": "Natation légère",
+    "description": "Nage en continu à allure confortable. L'eau masse le corps et favorise la détente musculaire.",
+    "category": "cardio",
+    "intensity": "moderee",
+    "duration_min": 25,
+    "tags": ["piscine", "articulations"],
+    "emoji": "🏊",
+    "published": true,
+    "steps": [
+      { "step": 1, "text": "Échauffement : 4 longueurs au crawl lent ou brasse." },
+      { "step": 2, "text": "Nagez 15 minutes en alternant crawl et dos crawlé." },
+      { "step": 3, "text": "Terminez par 2 longueurs très lentes et étirements au bord." }
+    ]
+  },
+  {
+    "id": "ex-007",
+    "title": "Marche nordique",
+    "description": "Marche avec bâtons pour solliciter 90 % des muscles. Excellent complément à la méthode HYDRIC.",
+    "category": "cardio",
+    "intensity": "moderee",
+    "duration_min": 40,
+    "tags": ["extérieur", "bâtons"],
+    "emoji": "🥾",
+    "published": true,
+    "steps": [
+      { "step": 1, "text": "Réglez les bâtons à hauteur de poignet, échauffement 5 min sans bâtons." },
+      { "step": 2, "text": "Marche nordique 30 minutes, bras et jambes synchronisés." },
+      { "step": 3, "text": "Retour au calme 5 minutes, étirez avant-bras et épaules." }
+    ]
+  },
+  {
+    "id": "ex-008",
+    "title": "Renforcement léger",
+    "description": "Circuit au poids du corps : squats, fentes et pompes sur les genoux. Adapté aux jours alimentaires.",
+    "category": "renforcement",
+    "intensity": "moderee",
+    "duration_min": 20,
+    "tags": ["maison", "circuit"],
+    "emoji": "🏋️",
+    "published": true,
+    "steps": [
+      { "step": 1, "text": "Échauffement articulaire : 3 minutes de mobilité hanches et épaules." },
+      { "step": 2, "text": "3 tours : 10 squats, 8 fentes par jambe, 8 pompes inclinées." },
+      { "step": 3, "text": "1 minute de planche et étirements des jambes." }
+    ]
+  },
+  {
+    "id": "ex-009",
+    "title": "Respiration & mobilité",
+    "description": "Séance courte de cohérence cardiaque et mouvements articulaires, parfaite en journée hydrique ou le matin.",
+    "category": "mobilite",
+    "intensity": "douce",
+    "duration_min": 10,
+    "tags": ["stress", "matin"],
+    "emoji": "🌬️",
+    "published": true,
+    "steps": [
+      { "step": 1, "text": "Assis confortablement, 5 minutes de respiration 4-4-4 (inspire, pause, expire)." },
+      { "step": 2, "text": "Mobilisez cou, épaules, poignets et chevilles (1 min chaque)." },
+      { "step": 3, "text": "Terminez debout, roulez les épaules et étirez les bras vers le ciel." }
+    ]
+  },
+  {
+    "id": "ex-010",
+    "title": "Squats & fentes",
+    "description": "Exercices fondamentaux pour tonifier jambes et fessiers. À réaliser avec une alimentation normale pour plus d'énergie.",
+    "category": "renforcement",
+    "intensity": "moderee",
+    "duration_min": 15,
+    "tags": ["jambes", "maison"],
+    "emoji": "🦵",
+    "published": true,
+    "steps": [
+      { "step": 1, "text": "Échauffement : 20 jumping jacks légers ou montées de genoux sur place." },
+      { "step": 2, "text": "4 séries de 12 squats, 10 fentes par jambe, 30 s de repos entre séries." },
+      { "step": 3, "text": "Étirez quadriceps, fessiers et mollets 3 minutes." }
+    ]
+  }
+]

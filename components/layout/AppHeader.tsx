@@ -8,11 +8,13 @@ import {
   CalendarDays,
   ChevronDown,
   Droplets,
+  Dumbbell,
   Home,
   User,
   UtensilsCrossed,
 } from "lucide-react";
 import { HydricMark } from "@/components/ui/HydricMark";
+import { isDomainSplit, marketingUrl } from "@/lib/domains";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
@@ -21,11 +23,13 @@ const NAV_ITEMS = [
   { href: "/planning", label: "Plans", title: "Mon planning", icon: CalendarDays },
   { href: "/tracker", label: "Suivi", title: "Hydratation", icon: Droplets },
   { href: "/recettes", label: "Recettes", title: "Recettes", icon: UtensilsCrossed },
+  { href: "/exercices", label: "Exercices", title: "Exercices", icon: Dumbbell },
   { href: "/profil", label: "Profil", title: "Profil", icon: User },
 ] as const;
 
 function getPageTitle(pathname: string): string {
   if (pathname.startsWith("/recettes/")) return "Recette";
+  if (pathname.startsWith("/exercices/")) return "Exercice";
   const item = NAV_ITEMS.find(
     (nav) => pathname === nav.href || pathname.startsWith(`${nav.href}/`)
   );
@@ -128,6 +132,18 @@ export function AppHeader() {
                   </Link>
                 );
               })}
+              {isDomainSplit() && (
+                <a
+                  href={marketingUrl("/")}
+                  role="menuitem"
+                  className="flex items-center gap-3 border-b border-rule px-3.5 py-3 text-[13px] text-ink transition-colors hover:bg-bone-deep last:border-0"
+                >
+                  <span className="h-4 w-4 shrink-0 text-center text-[11px] leading-4 text-ink-soft">
+                    ↗
+                  </span>
+                  Site vitrine
+                </a>
+              )}
             </nav>
           )}
         </div>

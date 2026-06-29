@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
-import Link from "next/link";
 import { CheckoutButton } from "@/components/landing/CheckoutButton";
 import { FaqList } from "@/components/landing/FaqList";
 import { HydricLogo } from "@/components/landing/HydricLogo";
+import { appUrl } from "@/lib/domains";
 
 export function LandingPage() {
   useEffect(() => {
@@ -45,8 +45,8 @@ export function LandingPage() {
             <a href="#resultats">Résultats</a>
             <a href="#tarifs">Tarifs</a>
             <a href="#faq">FAQ</a>
-            <Link href="/acces">Code privé</Link>
-            <Link href="/login">Connexion</Link>
+            <a href={appUrl("/acces")}>Code privé</a>
+            <a href={appUrl("/login")}>Connexion</a>
             <a href="#tarifs" className="nav-cta">
               Commencer
             </a>
@@ -401,9 +401,9 @@ export function LandingPage() {
 
           <p className="pricing-note">
             — Paiement sécurisé Stripe ·{" "}
-            <Link href="/acces" className="underline">
+            <a href={appUrl("/acces")} className="underline">
               Code d&apos;accès privé
-            </Link>{" "}
+            </a>{" "}
             · Garantie 14 jours
           </p>
         </div>
@@ -436,8 +436,8 @@ export function LandingPage() {
             Rejoindre HYDRIC →
           </a>
           <p className="cta-note">
-            — <Link href="/acces" style={{ color: "inherit" }}>Code privé</Link>{" "}
-            · <Link href="/login" style={{ color: "inherit" }}>Connexion</Link>
+            — <a href={appUrl("/acces")} style={{ color: "inherit" }}>Code privé</a>{" "}
+            · <a href={appUrl("/login")} style={{ color: "inherit" }}>Connexion</a>
           </p>
         </div>
       </section>
@@ -451,8 +451,8 @@ export function LandingPage() {
           <div className="footer-links">
             <a href="#methode">La méthode</a>
             <a href="#tarifs">Tarifs</a>
-            <Link href="/acces">Accès app</Link>
-            <Link href="/login">Connexion</Link>
+            <a href={appUrl("/acces")}>Accès app</a>
+            <a href={appUrl("/login")}>Connexion</a>
           </div>
           <div className="footer-copy">© 2026 HYDRIC™</div>
         </div>

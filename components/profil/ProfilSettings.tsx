@@ -67,6 +67,7 @@ export function ProfilSettings({
   const [message, setMessage] = useState<string | null>(null);
   const [checkoutLoading, setCheckoutLoading] = useState<PlanTier | null>(null);
   const [weightRefresh, setWeightRefresh] = useState(0);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   const loadData = useCallback(async () => {
     const res = await fetch("/api/profile");
@@ -95,6 +96,12 @@ export function ProfilSettings({
   useEffect(() => {
     void loadData();
   }, [loadData]);
+
+  useEffect(() => {
+    void fetch("/api/admin/me")
+      .then((r) => (r.ok ? r.json() : { admin: false }))
+      .then((data: { admin?: boolean }) => setIsAdmin(!!data.admin));
+  }, []);
 
   if (!profile) return null;
 
@@ -539,6 +546,19 @@ export function ProfilSettings({
           </Link>
         </div>
       </Section>
+
+      {isAdmin && (
+        <Section title="Administration" subtitle="Gérer recettes et exercices">
+          <Link
+            href="/admin"
+            className="flex w-full items-center justify-between border border-sage-deep/30 bg-sage-mist px-3 py-2.5 text-sm text-sage-deep"
+            style={{ borderRadius: 2 }}
+          >
+            Ouvrir l&apos;administration
+            <span className="font-mono text-[10px]">→</span>
+          </Link>
+        </Section>
+      )}
 
       {message && (
         <p className="mx-4 mb-2 text-center text-xs text-sage-deep">{message}</p>

@@ -55,7 +55,7 @@ export default function LoginPage() {
       return;
     }
 
-    router.push("/dashboard");
+    router.push(searchParams.get("next") || "/dashboard");
     router.refresh();
   }
 
