@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import { AppHeader } from "@/components/layout/AppHeader";
 import { BottomNav } from "@/components/layout/BottomNav";
 import { InstallPrompt } from "@/components/pwa/InstallPrompt";
 import { ProfileHydrator } from "@/components/providers/ProfileHydrator";
@@ -50,6 +51,7 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
           <NotificationScheduler />
           <div className="min-h-screen bg-bone md:bg-rule md:py-6">
             <div className="relative mx-auto flex min-h-screen w-full max-w-phone flex-col bg-bone pb-20 md:min-h-[calc(100dvh-3rem)] md:border md:border-rule md:shadow-[0_8px_40px_rgba(26,31,27,0.08)]">
+              <AppHeader />
               <main className="flex-1">{children}</main>
               <BottomNav />
               <InstallPrompt />

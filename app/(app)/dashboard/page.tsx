@@ -1,7 +1,6 @@
 "use client";
 
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
-import { TopBar } from "@/components/layout/TopBar";
 import { DayHeroBanner } from "@/components/dashboard/DayHeroBanner";
 import { QuickStats } from "@/components/dashboard/QuickStats";
 import { ActionCards } from "@/components/dashboard/ActionCards";
@@ -27,7 +26,6 @@ export default function DashboardPage() {
 
   return (
     <>
-      <TopBar showLogo />
       <DayHeroBanner
         prenom={profile.prenom}
         dayType={dayType}
