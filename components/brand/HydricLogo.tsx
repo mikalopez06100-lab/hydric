@@ -1,5 +1,8 @@
+import Image from "next/image";
+import logoImage from "@/assets/brand/logo-hydric.png";
 import { cn } from "@/lib/utils";
 
+/** Chemin public (manifest, notifications, favicon). */
 export const HYDRIC_LOGO_PATH = "/brand/logo-hydric.png";
 
 export function HydricLogo({
@@ -14,16 +17,15 @@ export function HydricLogo({
   priority?: boolean;
 }) {
   const h = height ?? size ?? 40;
+  const w = Math.round((logoImage.width / logoImage.height) * h);
 
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={HYDRIC_LOGO_PATH}
+    <Image
+      src={logoImage}
       alt="HYDRIC"
-      width={h}
+      width={w}
       height={h}
-      decoding="async"
-      fetchPriority={priority ? "high" : "auto"}
+      priority={priority}
       className={cn("block w-auto object-contain", className)}
       style={{ height: h, width: "auto" }}
     />

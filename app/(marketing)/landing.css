@@ -101,7 +101,7 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo { display: flex; align-items: center; text-decoration: none; }
-.nav-logo img { display: block; }
+.nav-logo img { display: block; height: auto; width: auto; max-height: 56px; }
 .nav-links { display: flex; align-items: center; gap: 36px; }
 .nav-links a {
   font-family: var(--sans); font-size: .82rem; font-weight: 500;
@@ -559,7 +559,7 @@ footer {
   align-items: center;
 }
 .footer-mark { display: flex; align-items: center; }
-.footer-mark img { display: block; }
+.footer-mark img { display: block; height: auto; width: auto; max-height: 48px; }
 .footer-links { display: flex; gap: 28px; flex-wrap: wrap; justify-content: center; }
 .footer-links a {
   font-family: var(--sans); font-size: .78rem; color: rgba(244,241,234,.45);
