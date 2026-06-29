@@ -37,7 +37,7 @@ export function LandingPage() {
       <nav>
         <div className="nav-inner">
           <a href="#" className="nav-logo">
-            <HydricLogo height={44} priority />
+            <HydricLogo height={56} priority />
           </a>
           <div className="nav-links">
             <a href="#methode">La méthode</a>
