@@ -1,16 +1,26 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { HydricMark } from "@/components/ui/HydricMark";
-import { requireAdminUser } from "@/lib/admin";
+import { isUserAdmin } from "@/lib/admin";
+import { createClient } from "@/lib/supabase/server";
 
 export default async function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const user = await requireAdminUser();
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   if (!user) {
     redirect("/login?next=/admin");
+  }
+
+  const ok = await isUserAdmin(user.id, user.email);
+  if (!ok) {
+    redirect("/dashboard?error=admin_forbidden");
   }
 
   return (

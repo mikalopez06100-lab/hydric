@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { GRANT_COOKIE, applyGrantToUser } from "@/lib/access";
+import { isUserAdmin } from "@/lib/admin";
 import {
   appUrl,
   isAppHost,
@@ -117,7 +118,19 @@ export async function middleware(request: NextRequest) {
   if (user && pathname.startsWith("/login")) {
     const dashUrl = request.nextUrl.clone();
     const next = request.nextUrl.searchParams.get("next");
-    dashUrl.pathname = next?.startsWith("/") ? next : "/dashboard";
+    let target = next?.startsWith("/") ? next : "/dashboard";
+
+    if (target.startsWith("/admin")) {
+      const admin = await isUserAdmin(user.id, user.email);
+      if (!admin) {
+        dashUrl.pathname = "/dashboard";
+        dashUrl.search = "";
+        dashUrl.searchParams.set("error", "admin_forbidden");
+        return withCookies(supabaseResponse, NextResponse.redirect(dashUrl));
+      }
+    }
+
+    dashUrl.pathname = target;
     dashUrl.search = "";
     return withCookies(supabaseResponse, NextResponse.redirect(dashUrl));
   }

@@ -160,7 +160,7 @@ nav {
   pointer-events: none;
 }
 .hero-product-card {
-  position: absolute; bottom: 24px; right: -24px; z-index: 2;
+  position: absolute; bottom: 24px; right: 24px; z-index: 2;
   background: var(--paper); border: 1px solid var(--rule);
   padding: 20px 24px; border-radius: 2px;
   display: flex; flex-direction: column; gap: 4px;
@@ -177,7 +177,7 @@ nav {
 }
 .hpc-sub { font-size: .82rem; color: var(--ink-mid); }
 .hero-product-tag {
-  position: absolute; top: 24px; left: -24px; z-index: 2;
+  position: absolute; top: 24px; left: 24px; z-index: 2;
   background: var(--ink); color: var(--bone);
   padding: 8px 14px; border-radius: 2px;
   font-family: var(--mono); font-size: .68rem; letter-spacing: .14em;
@@ -672,6 +672,6 @@ footer {
 @media (max-width: 640px) {
   .how-grid { grid-template-columns: 1fr; }
   .numbers-grid { grid-template-columns: 1fr 1fr; }
-  .hero-product-card { right: 0; }
-  .hero-product-tag { left: 0; }
+  .hero-product-card { right: 16px; bottom: 16px; }
+  .hero-product-tag { left: 16px; top: 16px; }
 }

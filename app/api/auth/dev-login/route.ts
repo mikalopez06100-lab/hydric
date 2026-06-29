@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { getDevAuthPassword } from "@/lib/auth";
 import { isDevOpenAccess } from "@/lib/dev";
+import { shouldGrantAdminOnLogin } from "@/lib/admin";
 import { createAdminClient } from "@/lib/supabase/admin";
 
 const BodySchema = z.object({
@@ -71,6 +72,7 @@ export async function POST(req: Request) {
         email: normalized,
         stripe_status: "active",
         plan: "essential",
+        ...(shouldGrantAdminOnLogin(normalized) ? { is_admin: true } : {}),
       },
       { onConflict: "id" }
     );
